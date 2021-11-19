@@ -1,0 +1,27 @@
+// // Colors
+
+$white: #ffffff;
+$black: #000000;
+$black-wood:#1d1613;
+$medium-wood:#a87b62;
+$zorba: #9b9997;
+$desert-storm: #f0eae4;
+$very-dark-brown: rgba(86, 64, 52, 0.7);
+$seashell: #f6f5f4;
+
+// Font
+
+$poppins: "Poppins", "Arial", sans-serif;
+$cormorant-garamond: "Cormorant Garamond", "Times New Roman", serif;
+
+@mixin font($font, $style: normal, $weight: 400) {
+  font-family: $font;
+  font-style: $style;
+  font-weight: $weight;
+}
+
+// Viewports
+
+$desktop-width: 1024px;
+$tablet-width: 1023px;
+$mobile-width: 767px;
