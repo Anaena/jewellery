@@ -4,8 +4,12 @@
 @import "global/fonts.scss";
 
 // Blocks
-// @import "blocks/page.scss";
-// @import "blocks/page-header.scss";
+@import "blocks/page.scss";
+@import "blocks/page-header.scss";
+@import "blocks/container.scss";
+@import "blocks/logo.scss";
+@import "blocks/main-nav.scss";
+@import "blocks/site-list.scss";
+@import "blocks/info-list.scss";
 // @import "blocks/button.scss";
-// @import "blocks/logo.scss";
 // @import "blocks/page-footer.scss";

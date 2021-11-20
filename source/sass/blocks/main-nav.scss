@@ -1,0 +1,38 @@
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.main-nav--opened {
+  @media (max-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 6px 0;
+  }
+}
+
+.main-nav--closed {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.main-nav__list {
+  list-style: none;
+}
+
+.main-nav__login-link {
+  display: none;
+
+  @media (max-width: $tablet-width) {
+    text-decoration: none;
+  }
+}

@@ -1,13 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Jewellery</title>
+  <link rel="preload" href="fonts/poppins-v15-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-v15-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-v15-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-500italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-700.woff2" as="font" type="font/woff2"
+    crossorigin>
+  <link rel="stylesheet" href="css/style.min.css">
+  <!-- <link rel="preload" href="js/main.js" as="script"> -->
 </head>
-<body>
+<!-- page__body--locked - блокирует scroll -->
+<body class="page__body">
+  <header class="page-header">
+    <!-- page-header__container--nojs - добавляет background-position когда нет js -->
+    <!-- page-header__container--active - добавляется если меню открыто -->
+    <div class="page-header__container container page-header__container--nojs">
+      <!-- main-nav__toggle - кнопка открытия меню -->
+        <button class="page-header__nav-toggle" type="button" aria-label="Click to open">
+          <svg class="page-header__icon" width="25" height="18" viewbox="0 0 25 18">
+            <use xlink:href="img/sprite_auto.svg#icon-burger">
+            </use>
+          </svg>
+        </button>
+        <form class="page-header__search-form" action="#" method="get">
+          <svg class="page-header__search-icon" width="14" height="14" viewbox="0 0 14 14">
+            <use xlink:href="img/sprite_auto.svg#icon-search">
+            </use>
+          </svg>
+          <label class="visually-hidden" for="search">Type here to search</label>
+          <input id="search" type="search" placeholder="Type here to search">
+        </form>
+        <a class="page-header__logo logo">
+          <p class="visually-hidden">Ch Jewellery</p>
+          <svg class="page-header__logo-icon" width="66" height="66" viewbox="0 0 66 66">
+            <use xlink:href="img/sprite_auto.svg#icon-logo">
+            </use>
+          </svg>
+        </a>
+        <div class="page-header__login">
+          <a class="page-header__login-link" href="#">Login</a>
+        </div>
+        <div class="page-header__cart">
+          <a class="page-header__cart-link" href="#">
+            <svg class="page-header__icon" width="20" height="18" viewbox="0 0 20 18">
+              <use xlink:href="img/sprite_auto.svg#icon-cart">
+              </use>
+            </svg>
+            <span>Cart</span>
+            <span>0</span></a>
+        </div>
+
+      <!--main-nav--opened - добавляется если меню открыто -->
+      <!-- main-nav--closed - добавляется если меню закрыто -->
+      <!-- main-nav--nojs - нет js -->
+      <nav class="page-header__nav main-nav main-nav--nojs main-nav--closed">
+        <ul class="main-nav__list site-list">
+          <li>
+            <a class="site-list__link" href="#">What’s new</a>
+          </li>
+          <li>
+            <a class="site-list__link" href="#">Chokers</a>
+          </li>
+          <li>
+            <a class="site-list__link" href="#">Necklaces</a>
+          </li>
+          <li>
+            <a class="site-list__link" href="#">Rings</a>
+          </li>
+          <li>
+            <a class="site-list__link" href="#">Earrings</a>
+          </li>
+        </ul>
+        <ul class="main-nav__list info-list">
+          <li>
+            <a class="info-list__link" href="#">About CH</a>
+          </li>
+          <li>
+            <a class="info-list__link" href="#">Stores & Hours</a>
+          </li>
+          <li>
+            <a class="info-list__link" href="#">Contact Us</a>
+          </li>
+        </ul>
+        <!-- <a class="main-nav__login-link" href="#">Login</a> -->
+      </nav>
+    </div>
+  </header>
   <h1>Добро пожаловать в Лигу А.</h1>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

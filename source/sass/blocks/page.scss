@@ -1,0 +1,27 @@
+.page {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  @include font($poppins, normal, 500);
+  font-size: 16px;
+  line-height: 21px;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+  min-width: 290px;
+  min-height: 100%;
+  margin: 0 auto;
+  background-color: $white;
+  color: $black-wood;
+}
+
+.page__body--locked {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
