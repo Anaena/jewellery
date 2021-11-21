@@ -3,6 +3,10 @@
   justify-content: space-between;
   padding: 16px 0 0;
 
+  @media (max-width: $tablet-width) {
+    padding: 2px 0 0;
+  }
+
   & ul {
     @include font($poppins, normal, 500);
     font-size: 16px;
@@ -11,10 +15,19 @@
     padding: 0;
     list-style: none;
     color: $white;
+
+    @media (max-width: $mobile-width) {
+      display: flex;
+      justify-content: flex-start;
+    }
   }
 
-  & li {
+  & li:not(:last-of-type) {
     margin: 0 0 21px;
+
+    @media (max-width: $mobile-width) {
+      margin: 0 30px 0 0;
+    }
   }
 
   & a {
@@ -25,6 +38,7 @@
     padding: 0;
     text-decoration: none;
     color: $white;
+    outline: none;
   }
 
   & a:hover,
@@ -39,9 +53,26 @@
   & svg {
     fill: $white;
     margin-right: 12px;
-  }
-}
 
-.social-networks__icon--facebook {
-  margin-left: 6px;
+    @media (max-width: $mobile-width) {
+      width: 20px;
+      height: 21px;
+      margin-right: 0;
+    }
+  }
+
+  & span {
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+
+  .social-networks__icon--facebook {
+    margin-left: 6px;
+
+    @media (max-width: $mobile-width) {
+      width: 12px;
+      margin-left: 0;
+    }
+  }
 }

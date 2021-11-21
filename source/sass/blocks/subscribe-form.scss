@@ -5,6 +5,15 @@
     line-height: 44px;
     word-spacing: 0.15em;
     margin: 10px 0;
+
+    @media (max-width: $tablet-width) {
+      margin: 10px 0 9px;
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 80%;
+      margin: 10px 0 14px;
+    }
   }
 
   & p {
@@ -14,6 +23,10 @@
     margin: 0;
     padding: 0;
     color: $zorba;
+
+    @media (max-width: $mobile-width) {
+      width: 85%;
+    }
   }
 
   & fieldset {
@@ -23,15 +36,28 @@
     padding: 0;
     border: none;
     border-bottom: 1px solid $white;
+
+    @media (max-width: $tablet-width) {
+      width: calc(100% - 13px);
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 100%;
+    }
   }
 }
 
 .subscribe-form__wrapper {
   display: flex;
   align-items: flex-end;
-  width: 21%;
+  width: 27%;
   min-height: 70px;
   margin-bottom: 3px;
+
+  @media (max-width: $mobile-width) {
+    width: auto;
+    margin-bottom: 2px;
+  }
 
   & input {
     @include font($poppins, normal, 500);
@@ -47,6 +73,11 @@
     @media (max-width: $tablet-width) {
       width: calc(100% - 26px);
     }
+
+    @media (max-width: $mobile-width) {
+      width: 100%;
+      padding: 7px 5px 7px 0;
+    }
   }
 
   & input::placeholder {
@@ -54,12 +85,11 @@
     color: $zorba;
 
     @media (max-width: $tablet-width) {
-      color: transparent;
     }
   }
 
   &--email {
-    width: calc(100% - 110px);
+    width: calc(100% - 130px);
   }
 }
 
@@ -79,13 +109,17 @@
   cursor: pointer;
   outline: none;
 
+  @media (max-width: $mobile-width) {
+    height: 37px;
+  }
+
   & span {
     @include font($poppins, normal, 500);
     margin-right: 12px;
   }
 
   & svg {
-    stroke: $medium-wood;
+    stroke: $white;
   }
 
   &:hover,
