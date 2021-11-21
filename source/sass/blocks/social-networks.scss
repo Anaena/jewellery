@@ -1,22 +1,6 @@
-.page-footer {
-  color: $white;
-  background-color: $black;
-}
-
-.page-footer__container {
-  padding-top: 80px;
-  padding-bottom: 74px;
-}
-
-.page-footer__wrapper {
-  display: grid;
-  grid-template-columns: minmax(min-content, 500px) 1fr max-content;
-  column-gap: 91px;
-}
-
-.page-footer__nav {
+.social-networks {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 16px 0 0;
 
   & ul {
@@ -27,10 +11,6 @@
     padding: 0;
     list-style: none;
     color: $white;
-  }
-
-  & ul:first-of-type {
-    margin-right: 19%;
   }
 
   & li {
@@ -55,4 +35,13 @@
   & a:active {
     opacity: 0.5;
   }
+
+  & svg {
+    fill: $white;
+    margin-right: 12px;
+  }
+}
+
+.social-networks__icon--facebook {
+  margin-left: 6px;
 }
