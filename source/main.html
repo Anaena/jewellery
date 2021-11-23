@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jewellery</title>
+  <link rel="preload" href="fonts/poppins-v15-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-v15-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-v15-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-500italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.min.css">
+  <!-- <link rel="preload" href="js/main.js" as="script"> -->
+</head>
+<!-- page__body--locked - блокирует scroll -->
+
+<body class="page__body">
+  <header class="page-header">
+    <!-- page-header__container--nojs - добавляет background-position когда нет js -->
+    <!-- page-header__container--active - добавляется если меню открыто -->
+    <div class="page-header__container container page-header__container--nojs">
+      <!-- main-nav__toggle - кнопка открытия меню -->
+      <button class="page-header__nav-toggle" type="button" aria-label="Click to open">
+        <svg class="page-header__icon" width="25" height="18" viewbox="0 0 25 18">
+          <use xlink:href="img/sprite_auto.svg#icon-burger">
+          </use>
+        </svg>
+      </button>
+      <form class="page-header__search-form" action="#" method="get">
+        <svg class="page-header__search-icon" width="14" height="14" viewbox="0 0 14 14">
+          <use xlink:href="img/sprite_auto.svg#icon-search">
+          </use>
+        </svg>
+        <label class="visually-hidden" for="search">Type here to search</label>
+        <input id="search" type="search" placeholder="Type here to search">
+      </form>
+      <a class="page-header__logo logo">
+        <p class="visually-hidden">Ch Jewellery</p>
+        <svg class="page-header__logo-icon" width="66" height="66" viewbox="0 0 66 66">
+          <use xlink:href="img/sprite_auto.svg#icon-logo">
+          </use>
+        </svg>
+      </a>
+      <div class="page-header__login">
+        <a class="page-header__login-link" href="#">Login</a>
+      </div>
+      <div class="page-header__cart">
+        <a class="page-header__cart-link" href="#">
+          <svg class="page-header__icon" width="20" height="18" viewbox="0 0 20 18">
+            <use xlink:href="img/sprite_auto.svg#icon-cart">
+            </use>
+          </svg>
+          <span>Cart</span>
+          <span class="page-header__cart-count">0</span></a>
+      </div>
+
+      <!--main-nav--opened - добавляется если меню открыто -->
+      <!-- main-nav--closed - добавляется если меню закрыто -->
+      <nav class="page-header__nav main-nav main-nav--closed">
+        <ul class="main-nav__list site-list">
+          <li>
+            <a class="site-list__link" href="#">What’s new</a>
+          </li>
+          <li>
+            <a class="site-list__link" href="#">Chokers</a>
+          </li>
+          <li>
+            <a class="site-list__link" href="#">Necklaces</a>
+          </li>
+          <li>
+            <a class="site-list__link" href="#">Rings</a>
+          </li>
+          <li>
+            <a class="site-list__link" href="#">Earrings</a>
+          </li>
+        </ul>
+        <ul class="main-nav__list info-list">
+          <li>
+            <a class="info-list__link" href="#">About CH</a>
+          </li>
+          <li>
+            <a class="info-list__link" href="#">Stores & Hours</a>
+          </li>
+          <li>
+            <a class="info-list__link" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="promo promo--main">
+      <div class="promo__container container">
+        <h1>PERFECTION <span>made to be yours</span></h1>
+      </div>
+    </section>
+    <section class="new-jewellery">
+      <div class="new-jewellery__container container">
+        <h2>New In</h2>
+        <div class="slider">
+          <div class="slider__controls">
+            <button class="slider__button slider__button--prev" type="button" aria-label="press for prev">
+              <svg width="30" height="11" viewbox="0 0 30 11" fill="none">
+                <use xlink:href="img/sprite_auto.svg#icon-arrow">
+                </use>
+              </svg>
+            </button>
+            <button class="slider__button slider__button--next" type="button" aria-label="press for next">
+              <svg width="30" height="11" viewbox="0 0 30 11" fill="none">
+                <use xlink:href="img/sprite_auto.svg#icon-arrow">
+                </use>
+              </svg>
+            </button>
+          </div>
+          <a class="slider__link" href="#">Shop Now</a>
+          <div class="slider__content">
+            <ul class="slider__list">
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Necklace with amethyst</span>
+                      <b>$ 145</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-1-desktop@1x.webp 1x,
+                      img/main/slider-1-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-1-tablet@1x.webp 1x,
+                      img/main/slider-1-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-1-mobile@1x.webp 1x,
+                      img/main/slider-1-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-1-desktop@1x.jpg" width="270" height="284" srcset="img/main/slider-1-desktop@2x.jpg 2x" alt="necklace with amethyst">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Layered сhoker</span>
+                      <b>$ 115</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-2-desktop@1x.webp 1x,
+                      img/main/slider-2-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-2-tablet@1x.webp 1x,
+                      img/main/slider-2-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-2-mobile@1x.webp 1x,
+                      img/main/slider-2-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-2-desktop@1x.jpg" width="270" height="284" srcset="img/main/slider-2-desktop@2x.jpg 2x" alt="layered сhoker">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <div class="slider__pagination pagination">
+            <ul class="pagination__list">
+              <li><a class="pagination__item pagination__item--current" href="#">1</a></li>
+              <li><a class="pagination__item" href="#">2</a></li>
+              <li><a class="pagination__item" href="#">3</a></li>
+              <li><a class="pagination__item" href="#">4</a></li>
+              <li><a class="pagination__item" href="#">5</a></li>
+              <li><a class="pagination__item" href="#">6</a></li>
+            </ul>
+            <div class="pagination__counter counter">
+              <span class="counter__current">1</span>
+              <span>of</span>
+              <span class="counter__total">6</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="blog">
+      <div class="blog__container container">
+        <h2>Blog</h2>
+        <a class="blog__link" href="#">Read All</a>
+        <div class="blog__articles">
+          <ul>
+            <li>
+              <article class="blog__item blog__item--right-side">
+                <div class="blog__content">
+                  <h3>How to care for your jewellery</h3>
+                  <time datetime="2019-09-30">September 30, 2019</time>
+                  <a href="#">Read Article</a>
+                </div>
+                <div class="blog__img">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/blog-1-desktop@1x.webp 1x,
+                    img/main/blog-1-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-1-tablet@1x.webp 1x,
+                    img/main/blog-1-tablet@2x.webp 2x">
+                    <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-1-mobile@1x.webp 1x,
+                    img/main/blog-1-mobile@2x.webp 2x">
+                    <!-- 1x - 270px, 2x - 540px -->
+                    <img src="img/main/blog-1-desktop@1x.jpg" width="285" height="300" srcset="img/main/blog-1-desktop@1x@2x.jpg 2x" alt="layered сhoker">
+                  </picture>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="blog__item blog__item--left-side">
+                <div class="blog__content">
+                  <h3>Power of crystals</h3>
+                  <time datetime="2019-09-23">September 23, 2019</time>
+                  <a href="#">Read Article</a>
+                </div>
+                <div class="blog__img">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/blog-2-desktop@1x.webp 1x,
+                    img/main/blog-2-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-2-tablet@1x.webp 1x,
+                    img/main/blog-2-tablet@2x.webp 2x">
+                    <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-2-mobile@1x.webp 1x,
+                    img/main/blog-2-mobile@2x.webp 2x">
+                    <!-- 1x - 270px, 2x - 540px -->
+                    <img src="img/main/blog-2-desktop@1x.jpg" width="285" height="300" srcset="img/main/blog-2-desktop@2x.jpg 2x" alt="orange crystals">
+                  </picture>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="blog__item blog__item--big-img">
+                <div class="blog__content">
+                  <h3>AW 19 trends</h3>
+                  <time datetime="2019-09-16">September 16, 2019</time>
+                  <a href="#">Read Article</a>
+                </div>
+                <div class="blog__img">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/blog-3-desktop@1x.webp 1x,
+                    img/main/blog-3-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-3-tablet@1x.webp 1x,
+                    img/main/blog-3-tablet@2x.webp 2x">
+                    <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-3-mobile@1x.webp 1x,
+                    img/main/blog-3-mobile@2x.webp 2x">
+                    <!-- 1x - 270px, 2x - 540px -->
+                    <img src="img/main/blog-3-desktop@1x.jpg" width="570" height="630" srcset="img/main/blog-3-desktop@2x.jpg 2x" alt="layered сhoker">
+                  </picture>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="page-footer__container container">
+      <div class="page-footer__wrapper">
+        <form class="page-footer__subscribe-form subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
+          <h2>The good stuff in your inbox</h2>
+          <p>News and updates from CH. No spam, we promise.</p>
+          <fieldset>
+            <div class="subscribe-form__wrapper subscribe-form__wrapper--email">
+              <label class="visually-hidden" for="email">Your E-mail</label>
+              <input id="email" type="email" name="email" placeholder="Your E-mail">
+            </div>
+            <div class="subscribe-form__wrapper">
+              <button class="subscribe-form__button" type="submit" aria-label="press to sign up">
+                <span>Sign Up</span>
+                <svg width="30" height="11" viewbox="0 0 30 11" fill="none">
+                  <use xlink:href="img/sprite_auto.svg#icon-arrow">
+                  </use>
+                </svg>
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        <div class="page-footer__nav">
+          <h2 class="visually-hidden">services and information about company</h2>
+          <ul class="page-footer__nav-list">
+            <li>
+              <a href="#">Ordering & Payment</a>
+            </li>
+            <li>
+              <a href="#">Terms & Conditions</a>
+            </li>
+            <li>
+              <a href="#">Returns & Exchanges</a>
+            </li>
+            <li>
+              <a href="#">Delivery</a>
+            </li>
+          </ul>
+          <ul class="page-footer__nav-list">
+            <li>
+              <a href="#">About CH</a>
+            </li>
+            <li>
+              <a href="#">Stores & Hours</a>
+            </li>
+            <li>
+              <a href="#">Jobs</a>
+            </li>
+            <li>
+              <a href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__social social-networks">
+          <h2 class="visually-hidden">find us in social networks</h2>
+          <ul>
+            <li>
+              <a href="#">
+                <svg class="social-networks__icon social-networks__icon--facebook" width="8" height="15" viewbox="0 0 8 15">
+                  <use xlink:href="img/sprite_auto.svg#icon-facebook"></use>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg width="15" height="15" viewbox="0 0 15 15">
+                  <use xlink:href="img/sprite_auto.svg#icon-instagram"></use>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg width="16" height="15" viewbox="0 0 16 15">
+                  <use xlink:href="img/sprite_auto.svg#icon-pinterest"></use>
+                </svg>
+                <span>Pinterest</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg width="15" height="13" viewbox="0 0 15 13">
+                  <use xlink:href="img/sprite_auto.svg#icon-twitter"></use>
+                </svg>
+                <span>Twitter</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

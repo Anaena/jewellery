@@ -1,0 +1,99 @@
+.promo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $very-dark-brown;
+  }
+}
+
+.promo--main {
+  min-height: 463px;
+  background-image: url("../img/main/main-bg-desktop@1x.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: $tablet-width) {
+    background-image: url("../img/main/main-bg-tablet@1x.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (max-width: $mobile-width) {
+    background-image: url("../img/main/main-bg-mobile@1x.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/main/main-bg-desktop@2x.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (max-width: $tablet-width) {
+      background-image: url("../img/main/main-bg-tablet@2x.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    @media (max-width: $mobile-width) {
+      background-image: url("../img/main/main-bg-mobile@2x.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+
+.promo__container {
+  z-index: 1;
+
+  @media (max-width: $tablet-width) {
+    padding-right: 65px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-right: 15px;
+  }
+
+  & h1 {
+    @include font($cormorant-garamond, normal, 700);
+    font-size: 45px;
+    line-height: 58px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+
+    @media (max-width: $mobile-width) {
+      font-size: 38px;
+      line-height: 49px;
+      margin-top: 39px;
+    }
+  }
+
+  & span {
+    @include font($cormorant-garamond, italic, 400);
+    display: block;
+    letter-spacing: 0;
+    font-size: 38px;
+    line-height: 49px;
+    text-transform: none;
+
+    @media (max-width: $mobile-width) {
+      font-size: 34px;
+      line-height: 44px;
+      position: relative;
+      top: -7px;
+    }
+  }
+}

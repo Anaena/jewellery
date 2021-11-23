@@ -1,0 +1,17 @@
+.counter {
+  display: none;
+
+  @media (max-width: $mobile-width) {
+    display: flex;
+
+    & span {
+      padding: 0 5px;
+    }
+  }
+}
+
+.counter__current {
+}
+
+.counter__total {
+}

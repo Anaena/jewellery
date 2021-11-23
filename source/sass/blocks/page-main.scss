@@ -1,3 +1,31 @@
-main {
-  min-height: 293px;
+.page-main__container {
+  height: 100%;
+}
+
+.page-main__links {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & a {
+    font-size: 16px;
+    line-height: 24px;
+    color: $black-wood;
+    text-decoration: none;
+  }
+
+  & a:not(:last-of-type) {
+    margin-right: 25px;
+  }
+
+  & a:hover,
+  & a:focus {
+    outline: none;
+    opacity: 0.7;
+  }
+
+  & a:active {
+    opacity: 0.5;
+  }
 }
