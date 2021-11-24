@@ -109,11 +109,17 @@
   list-style: none;
 
   @media (max-width: $tablet-width) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,max-content);
+    justify-content: center;
+    // grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: $mobile-width) {
     padding: 29px 0 0;
+  }
+
+  & li {
+    width: 100%;
   }
 }
 

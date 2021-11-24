@@ -4,12 +4,21 @@
   padding-right: 98px;
   padding-left: 98px;
 
-  @media (max-width: 1365px) {
+  @media (max-width: 1187px) {
+    min-width: 970px;
+    width: 85%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    min-width: 768px;
     padding-right: 45px;
     padding-left: 45px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: $mobile-width) {
     min-width: 290px;
     padding-right: 15px;
     padding-left: 15px;

@@ -1,0 +1,198 @@
+.accordion {
+  width: 100%;
+  min-width: 970px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (max-width: $tablet-width) {
+    min-width: 678px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-width: 290px;
+  }
+}
+
+.accordion--nojs {
+  & .accordion__item {
+    padding: 42px 40px 42px;
+  }
+
+  & .accordion__content {
+    display: flex;
+  }
+
+  & .accordion__title button {
+    display: none;
+  }
+}
+
+.accordion__item {
+  min-height: 111px;
+  padding: 44px 46px 40px 42px;
+
+  @media (max-width: $tablet-width) {
+    padding: 43px 49px 43px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 81px;
+    padding: 19px 24px 18px;
+  }
+}
+
+.accordion__item:first-of-type {
+  @media (max-width: $mobile-width) {
+    padding: 15px 24px 19px;
+  }
+}
+
+.accordion__item:not(:last-of-type) {
+  border-bottom: 1px solid $medium-wood;
+}
+
+.accordion__item--active {
+  .accordion__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .accordion__icon--open {
+    display: none;
+  }
+
+  .accordion__icon--hide {
+    display: flex;
+  }
+}
+
+.accordion__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: $mobile-width) {
+    align-items: flex-start;
+  }
+
+  & h3 {
+    @include font($poppins, normal, 500);
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0;
+    color: $black-wood;
+
+    @media (max-width: $mobile-width) {
+      width: 76%;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  & button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 15px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    @media (max-width: $tablet-width) {
+      width: 24px;
+      height: 20px;
+    }
+
+    @media (max-width: $mobile-width) {
+      height: 23px;
+    }
+  }
+
+  & svg {
+    width: 17px;
+    height: 10px;
+    stroke: $medium-wood;
+
+    @media (max-width: $tablet-width) {
+      width: 23px;
+      height: 12px;
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 20px;
+      height: 10px;
+    }
+  }
+
+  & button:focus svg,
+  &:hover svg {
+    stroke: $black-wood;
+  }
+
+  & button:active svg,
+  &:active svg {
+    opacity: 0.7;
+  }
+}
+
+.accordion__title--big {
+  & h3 {
+    @media (max-width: $mobile-width) {
+      width: 90%;
+    }
+  }
+
+  & br {
+    display: none;
+
+    @media (max-width: $mobile-width) {
+      display: block;
+    }
+  }
+}
+
+.accordion__icon--open {
+  display: flex;
+  @media (max-width: $mobile-width) {
+  }
+}
+
+.accordion__icon--hide {
+  display: none;
+  @media (max-width: $mobile-width) {
+  }
+}
+
+.accordion__content {
+  display: none;
+  width: 60%;
+  height: auto;
+  margin: 0;
+  padding: 7px 0 0 8px;
+
+  @media (max-width: $tablet-width) {
+    width: 95%;
+    padding: 26px 0 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 87%;
+    padding: 15px 0 0;
+  }
+
+  & p {
+    @include font($poppins, normal, 400);
+    margin: 0;
+
+    @media (max-width: $mobile-width) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
