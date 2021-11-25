@@ -1,7 +1,5 @@
 .accordion {
-  width: 100%;
   max-width: 970px;
-  margin: 0;
   padding: 0;
   list-style: none;
 
@@ -172,14 +170,10 @@
 
 .accordion__icon--open {
   display: flex;
-
-  @media (max-width: $mobile-width) {}
 }
 
 .accordion__icon--hide {
   display: none;
-
-  @media (max-width: $mobile-width) {}
 }
 
 .accordion__content {

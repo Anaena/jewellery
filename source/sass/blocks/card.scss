@@ -8,11 +8,11 @@
   }
 
   & h3 {
-    margin: 0;
-    order: 1;
     @include font($poppins, normal, 700);
     font-size: 14px;
     line-height: 19px;
+    margin: 0;
+    order: 1;
 
     @media (max-width: $tablet-width) {
       width: 100%;

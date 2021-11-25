@@ -163,11 +163,11 @@
   &:hover svg,
   &:focus svg {
     outline: none;
-    opacity: 0.7;
+    fill: $medium-wood;
   }
 
   &:active svg {
-    opacity: 0.5;
+    opacity: 0.7;
   }
 }
 

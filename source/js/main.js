@@ -5,10 +5,10 @@ const pageHeaderContainer = document.querySelector('.page-header__container');
 const menuButtonElement = document.querySelector('.page-header__nav-toggle');
 const pageHeaderNav = document.querySelector('.page-header__nav');
 
+pageHeaderNav.classList.remove('main-nav--opened');
 pageHeaderContainer.classList.remove('page-header__container--nojs');
 pageHeaderContainer.classList.remove('page-header__container--active');
 pageHeaderNav.classList.remove('main-nav--nojs');
-pageHeaderNav.classList.remove('main-nav--opened');
 pageHeaderNav.classList.add('main-nav--closed');
 
 // Menu
