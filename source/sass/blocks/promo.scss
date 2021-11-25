@@ -58,13 +58,13 @@
   z-index: 1;
 
   @media (max-width: $tablet-width) {
-    padding-right: 20px;
-    // padding-right: 65px;
+    // padding-right: 20px;
+    padding-right: 65px;
   }
 
   @media (max-width: $mobile-width) {
-    // padding-right: 15px;
-    padding-right: 0;
+    padding-right: 15px;
+    // padding-right: 0;
   }
 
   & h1 {

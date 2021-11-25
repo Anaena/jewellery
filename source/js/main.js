@@ -9,6 +9,7 @@ pageHeaderContainer.classList.remove('page-header__container--nojs');
 pageHeaderContainer.classList.remove('page-header__container--active');
 pageHeaderNav.classList.remove('main-nav--nojs');
 pageHeaderNav.classList.remove('main-nav--opened');
+pageHeaderNav.classList.add('main-nav--closed');
 
 // Menu
 
@@ -25,6 +26,56 @@ menuButtonElement.addEventListener('click', () => {
     body.classList.remove('page__body--locked');
   }
 });
+
+//Slider
+
+const jewellerySlider = document.querySelector('.slider');
+jewellerySlider.classList.remove('slider--nojs');
+
+const makeSlidesCounter = () =>{
+  const countCurrent = $('.counter__current');
+  const countTotal = $('.counter__total');
+  const currentSlide = $('.pagination__list li').index($('.pagination__list .slick-active'));
+  const totalPages = $('.pagination__list').children().length;
+  countCurrent.text(currentSlide + 1);
+  countTotal.text(totalPages);
+};
+
+$('.slider__list').slick({
+  infinite: false,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  arrows: true,
+  dots: true,
+  swipe: false,
+  prevArrow: '.slider__button--prev',
+  nextArrow: '.slider__button--next',
+  appendDots: '.slider__pagination',
+  dotsClass: 'pagination__list',
+
+  responsive: [{
+    breakpoint: 1024,
+    settings: {
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      arrows: true,
+      dots: true,
+      swipe: true,
+    },
+  }, {
+    breakpoint: 768,
+    settings: {
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      arrows: false,
+      dots: true,
+      swipe: true,
+    },
+  }],
+}).slick('refresh');
+$('.slider__list').on('afterChange', makeSlidesCounter);
 
 // Accordion
 

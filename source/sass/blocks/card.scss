@@ -1,36 +1,34 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  max-width: 270px;
-
-  @media (max-width: $tablet-width) {
-    max-width: 324px;
-  }
+  display: grid;
+  justify-items: center;
+  row-gap: 20px;
 
   @media (max-width: $mobile-width) {
-    max-width: 130px;
+    row-gap: 15px;
   }
 
   & h3 {
+    margin: 0;
     order: 1;
+    @include font($poppins, normal, 700);
+    font-size: 14px;
+    line-height: 19px;
 
     @media (max-width: $tablet-width) {
-      margin: 15px 0;
-    }
-
-    @media (max-width: $mobile-width) {
-      margin: 10px 0;
+      width: 100%;
+      padding-top: 2px;
     }
   }
 
   & a {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // display: grid;
+    // text-align: center;
+    // row-gap: 7px;
     color: $black-wood;
     outline: none;
+    order: 2;
 
     &:hover,
     &:focus {
@@ -46,33 +44,45 @@
     @include font($poppins, normal, 500);
     font-size: 16px;
     line-height: 21px;
-    margin: 0 0 4px;
-
-    @media (max-width: $tablet-width) {
-      margin: 0 0 8px 0;
-      text-align: center;
-    }
+    margin: 0 0 7px;
+    text-align: center;
   }
 
   & b {
-    @include font($poppins, normal, 700);
-    font-size: 14px;
-    line-height: 19px;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
   }
 }
 
-.card__img img {
-  width: 270px;
-  height: 284px;
-  background-color: $very-dark-brown;
+.card__img {
+  width: 100%;
+  height: 100%;
+  max-width: 270px;
+  max-height: 284px;
 
   @media (max-width: $tablet-width) {
-    width: 324px;
-    height: 340px;
+    max-width: 324px;
+    max-height: 340px;
   }
 
   @media (max-width: $mobile-width) {
-    width: 130px;
-    height: 136px;
+    margin-bottom: 0;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    background-color: $very-dark-brown;
+
+    @media (max-width: $tablet-width) {
+      max-width: 324px;
+      max-height: 340px;
+    }
+
+    @media (max-width: $mobile-width) {
+      min-width: 130px;
+      min-height: 136px;
+    }
   }
 }

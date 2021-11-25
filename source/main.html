@@ -22,7 +22,7 @@
   <header class="page-header">
     <!-- page-header__container--nojs - добавляет background-position когда нет js -->
     <!-- page-header__container--active - добавляется если меню открыто -->
-    <div class="page-header__container container page-header__container--nojs">
+    <div class="page-header__container container page-header__container--nojs page-header__container--active">
       <!-- main-nav__toggle - кнопка открытия меню -->
       <button class="page-header__nav-toggle" type="button" aria-label="Click to open">
         <svg class="page-header__icon" width="25" height="18" viewbox="0 0 25 18">
@@ -60,7 +60,7 @@
 
       <!--main-nav--opened - добавляется если меню открыто -->
       <!-- main-nav--closed - добавляется если меню закрыто -->
-      <nav class="page-header__nav main-nav main-nav--closed">
+      <nav class="page-header__nav main-nav main-nav--opened">
         <ul class="main-nav__list site-list">
           <li>
             <a class="site-list__link" href="#">What’s new</a>
@@ -102,7 +102,8 @@
     <section class="new-jewellery">
       <div class="new-jewellery__container container">
         <h2>New In</h2>
-        <div class="slider">
+        <!--slider--nojs - открывает все вкладки аккордеона когда нет js-->
+        <div class="slider slider--nojs">
           <div class="slider__controls">
             <button class="slider__button slider__button--prev" type="button" aria-label="press for prev">
               <svg width="30" height="11" viewbox="0 0 30 11" fill="none">
@@ -119,7 +120,7 @@
           </div>
           <a class="slider__link" href="#">Shop Now</a>
           <div class="slider__content">
-            <ul class="slider__list">
+            <ul class="slider__list slider__list--">
               <li>
                 <div class="slider__card card">
                   <h3>
@@ -137,7 +138,8 @@
                       <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-1-mobile@1x.webp 1x,
                       img/main/slider-1-mobile@2x.webp 2x">
                       <!-- 1x - 270px, 2x - 540px -->
-                      <img src="img/main/slider-1-desktop@1x.jpg" width="270" height="284" srcset="img/main/slider-1-desktop@2x.jpg 2x" alt="necklace with amethyst">
+                      <img src="img/main/slider-1-desktop@1x.jpg" width="270" height="284" srcset="img/main/slider-1-mobile@1x.jpg 130w, img/main/slider-1-mobile@2x.jpg 260w, img/main/slider-1-tablet@1x.jpg 324w, img/main/slider-1-tablet@2x.jpg 648w, img/main/slider-1-desktop@1x.jpg 270w, img/main/slider-1-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="necklace with amethyst">
                     </picture>
                   </div>
                 </div>
@@ -159,27 +161,260 @@
                       <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-2-mobile@1x.webp 1x,
                       img/main/slider-2-mobile@2x.webp 2x">
                       <!-- 1x - 270px, 2x - 540px -->
-                      <img src="img/main/slider-2-desktop@1x.jpg" width="270" height="284" srcset="img/main/slider-2-desktop@2x.jpg 2x" alt="layered сhoker">
+                      <img src="img/main/slider-2-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-2-mobile@1x.jpg 130w, img/main/slider-2-mobile@2x.jpg 260w, img/main/slider-2-tablet@1x.jpg 324w, img/main/slider-2-tablet@2x.jpg 648w, img/main/slider-2-desktop 270w, img/main/slider-2-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="layered сhoker">
                     </picture>
                   </div>
                 </div>
               </li>
-
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Gold chain</span>
+                      <b>$ 215</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-3-desktop@1x.webp 1x,
+                      img/main/slider-3-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-3-tablet@1x.webp 1x,
+                      img/main/slider-3-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-3-mobile@1x.webp 1x,
+                      img/main/slider-3-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-3-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-3-mobile@1x.jpg 130w, img/main/slider-3-mobile@2x.jpg 260w, img/main/slider-3-tablet@1x.jpg 324w, img/main/slider-3-tablet@2x.jpg 648w, img/main/slider-3-desktop 270w, img/main/slider-3-desktop@2x.jpg 540w" sizes=" (min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="gold chain">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Galaxy earrings</span>
+                      <b>$ 95</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-4-desktop@1x.webp 1x,
+                      img/main/slider-4-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-4-tablet@1x.webp 1x,
+                      img/main/slider-4-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-4-mobile@1x.webp 1x,
+                      img/main/slider-4-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-4-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-4-mobile@1x.jpg 130w, img/main/slider-4-mobile@2x.jpg 260w, img/main/slider-4-tablet@1x.jpg 324w, img/main/slider-4-tablet@2x.jpg 648w, img/main/slider-4-desktop 270w, img/main/slider-4-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="galaxy earrings">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Necklace with amethyst</span>
+                      <b>$ 145</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-1-desktop@1x.webp 1x,
+                      img/main/slider-1-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-1-tablet@1x.webp 1x,
+                      img/main/slider-1-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-1-mobile@1x.webp 1x,
+                      img/main/slider-1-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-1-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-1-mobile@1x.jpg 130w, img/main/slider-1-mobile@2x.jpg 260w, img/main/slider-1-tablet@1x.jpg 324w, img/main/slider-1-tablet@2x.jpg 648w, img/main/slider-1-desktop 270w, img/main/slider-1-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="necklace with amethyst">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Layered сhoker</span>
+                      <b>$ 115</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-2-desktop@1x.webp 1x,
+                      img/main/slider-2-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-2-tablet@1x.webp 1x,
+                      img/main/slider-2-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-2-mobile@1x.webp 1x,
+                      img/main/slider-2-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-2-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-2-mobile@1x.jpg 130w, img/main/slider-2-mobile@2x.jpg 260w, img/main/slider-2-tablet@1x.jpg 324w, img/main/slider-2-tablet@2x.jpg 648w, img/main/slider-2-desktop 270w, img/main/slider-2-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="layered сhoker">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Gold chain</span>
+                      <b>$ 215</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-3-desktop@1x.webp 1x,
+                      img/main/slider-3-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-3-tablet@1x.webp 1x,
+                      img/main/slider-3-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-3-mobile@1x.webp 1x,
+                      img/main/slider-3-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-3-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-3-mobile@1x.jpg 130w, img/main/slider-3-mobile@2x.jpg 260w, img/main/slider-3-tablet@1x.jpg 324w, img/main/slider-3-tablet@2x.jpg 648w, img/main/slider-3-desktop 270w, img/main/slider-3-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="gold chain">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Galaxy earrings</span>
+                      <b>$ 95</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-4-desktop@1x.webp 1x,
+                      img/main/slider-4-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-4-tablet@1x.webp 1x,
+                      img/main/slider-4-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-4-mobile@1x.webp 1x,
+                      img/main/slider-4-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-4-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-4-mobile@1x.jpg 130w, img/main/slider-4-mobile@2x.jpg 260w, img/main/slider-4-tablet@1x.jpg 324w, img/main/slider-4-tablet@2x.jpg 648w, img/main/slider-4-desktop 270w, img/main/slider-4-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="galaxy earrings">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Necklace with amethyst</span>
+                      <b>$ 145</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-1-desktop@1x.webp 1x,
+                      img/main/slider-1-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-1-tablet@1x.webp 1x,
+                      img/main/slider-1-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-1-mobile@1x.webp 1x,
+                      img/main/slider-1-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-1-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-1-mobile@1x.jpg 130w, img/main/slider-1-mobile@2x.jpg 260w, img/main/slider-1-tablet@1x.jpg 324w, img/main/slider-1-tablet@2x.jpg 648w, img/main/slider-1-desktop 270w, img/main/slider-1-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="necklace with amethyst">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Layered сhoker</span>
+                      <b>$ 115</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-2-desktop@1x.webp 1x,
+                      img/main/slider-2-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-2-tablet@1x.webp 1x,
+                      img/main/slider-2-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-2-mobile@1x.webp 1x,
+                      img/main/slider-2-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-2-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-2-mobile@1x.jpg 130w, img/main/slider-2-mobile@2x.jpg 260w, img/main/slider-2-tablet@1x.jpg 324w, img/main/slider-2-tablet@2x.jpg 648w, img/main/slider-2-desktop 270w, img/main/slider-2-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="layered сhoker">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Gold chain</span>
+                      <b>$ 215</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-3-desktop@1x.webp 1x,
+                      img/main/slider-3-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-3-tablet@1x.webp 1x,
+                      img/main/slider-3-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-3-mobile@1x.webp 1x,
+                      img/main/slider-3-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-3-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-3-mobile@1x.jpg 130w, img/main/slider-3-mobile@2x.jpg 260w, img/main/slider-3-tablet@1x.jpg 324w, img/main/slider-3-tablet@2x.jpg 648w, img/main/slider-3-desktop 270w, img/main/slider-3-desktop@2x.jpg 540w"  sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="gold chain">
+                    </picture>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="slider__card card">
+                  <h3>
+                    <a href="#">
+                      <span>Galaxy earrings</span>
+                      <b>$ 95</b>
+                    </a>
+                  </h3>
+                  <div class="card__img">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/slider-4-desktop@1x.webp 1x,
+                      img/main/slider-4-desktop@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/main/slider-4-tablet@1x.webp 1x,
+                      img/main/slider-4-tablet@2x.webp 2x">
+                      <source type="image/webp" media="(max-width: 767px)" srcset="img/main/slider-4-mobile@1x.webp 1x,
+                      img/main/slider-4-mobile@2x.webp 2x">
+                      <!-- 1x - 270px, 2x - 540px -->
+                      <img src="img/main/slider-4-desktop@1x.jpg" width="270" height="284"
+                        srcset="img/main/slider-4-mobile@1x.jpg 130w, img/main/slider-4-mobile@2x.jpg 260w, img/main/slider-4-tablet@1x.jpg 324w, img/main/slider-4-tablet@2x.jpg 648w, img/main/slider-4-desktop 270w, img/main/slider-4-desktop@2x.jpg 540w" sizes="(min-width: 1024px) 270px, ((min-width: 1024px) and (min-resolution: 2dppx)) 540px, (min-width: 768px) 324px, ((min-width: 768px) and (min-resolution: 2dppx)) 648px, (max-width: 767px) 130px, ((max-width: 767px) and (min-resolution: 2dppx)) 260px"
+                        alt="galaxy earrings">
+                    </picture>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
-          <div class="slider__pagination pagination">
-            <ul class="pagination__list">
-              <li><a class="pagination__item pagination__item--current" href="#">1</a></li>
-              <li><a class="pagination__item" href="#">2</a></li>
-              <li><a class="pagination__item" href="#">3</a></li>
-              <li><a class="pagination__item" href="#">4</a></li>
-              <li><a class="pagination__item" href="#">5</a></li>
-              <li><a class="pagination__item" href="#">6</a></li>
-            </ul>
-            <div class="pagination__counter counter">
-              <span class="counter__current">1</span>
+          <div class="slider__pagination">
+            <div class="slider__counter counter">
+              <span class="counter__current"></span>
               <span>of</span>
-              <span class="counter__total">6</span>
+              <span class="counter__total"></span>
             </div>
           </div>
         </div>
@@ -206,8 +441,9 @@
                     img/main/blog-1-tablet@2x.webp 2x">
                     <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-1-mobile@1x.webp 1x,
                     img/main/blog-1-mobile@2x.webp 2x">
-                    <!-- 1x - 270px, 2x - 540px -->
-                    <img src="img/main/blog-1-desktop@1x.jpg" width="285" height="300" srcset="img/main/blog-1-desktop@1x@2x.jpg 2x" alt="layered сhoker">
+                    <!-- 1x - 285px, 2x - 570px -->
+                    <img src="img/main/blog-1-desktop@1x.jpg" width="285" height="300"
+                      srcset="img/main/blog-1-desktop@1x@2x.jpg 2x" alt="layered сhoker">
                   </picture>
                 </div>
               </article>
@@ -227,8 +463,9 @@
                     img/main/blog-2-tablet@2x.webp 2x">
                     <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-2-mobile@1x.webp 1x,
                     img/main/blog-2-mobile@2x.webp 2x">
-                    <!-- 1x - 270px, 2x - 540px -->
-                    <img src="img/main/blog-2-desktop@1x.jpg" width="285" height="300" srcset="img/main/blog-2-desktop@2x.jpg 2x" alt="orange crystals">
+                    <!-- 1x - 285px, 2x - 570px -->
+                    <img src="img/main/blog-2-desktop@1x.jpg" width="285" height="300"
+                      srcset="img/main/blog-2-desktop@2x.jpg 2x" alt="orange crystals">
                   </picture>
                 </div>
               </article>
@@ -248,8 +485,9 @@
                     img/main/blog-3-tablet@2x.webp 2x">
                     <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-3-mobile@1x.webp 1x,
                     img/main/blog-3-mobile@2x.webp 2x">
-                    <!-- 1x - 270px, 2x - 540px -->
-                    <img src="img/main/blog-3-desktop@1x.jpg" width="570" height="630" srcset="img/main/blog-3-desktop@2x.jpg 2x" alt="layered сhoker">
+                    <!-- 1x - 570px, 2x - 1140px -->
+                    <img src="img/main/blog-3-desktop@1x.jpg" width="570" height="630"
+                      srcset="img/main/blog-3-desktop@2x.jpg 2x" alt="layered сhoker">
                   </picture>
                 </div>
               </article>
@@ -269,10 +507,12 @@
               <div class="accordion__title">
                 <h3>What materials are the&nbsp;jewellery made of?</h3>
                 <button type="button" aria-label="press for open or hide">
-                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none"
+                    viewbox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
                   </svg>
-                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none"
+                    viewbox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
                   </svg>
                 </button>
@@ -286,10 +526,12 @@
               <div class="accordion__title">
                 <h3>Which countries do&nbsp;you deliver to?</h3>
                 <button type="button" aria-label="Нажми чтобы узнать наши контакты">
-                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none"
+                    viewbox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
                   </svg>
-                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none"
+                    viewbox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
                   </svg>
                 </button>
@@ -303,10 +545,12 @@
               <div class="accordion__title">
                 <h3>What are the payment methods?</h3>
                 <button type="button" aria-label="Нажми чтобы узнать наши контакты">
-                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none"
+                    viewbox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
                   </svg>
-                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none"
+                    viewbox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
                   </svg>
                 </button>
@@ -320,10 +564,12 @@
               <div class="accordion__title accordion__title--big">
                 <h3>Can I return the<br> jewellery if it didn’t fit me?</h3>
                 <button type="button" aria-label="Нажми чтобы узнать наши контакты">
-                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none"
+                    viewbox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
                   </svg>
-                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none"
+                    viewbox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
                   </svg>
                 </button>
@@ -335,6 +581,119 @@
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+    <section class="follow-us">
+      <div class="follow-us__container container">
+        <h2>Chjewellery</h2>
+        <a class="follow-us__link" href="#">Follow Us</a>
+        <ul class="follow-us__gallery">
+          <li>
+            <div class="follow-us__img">
+              <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/blog-3-desktop@1x.webp 1x,
+                      img/main/blog-3-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-3-tablet@1x.webp 1x,
+                      img/main/blog-3-tablet@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-3-mobile@1x.webp 1x,
+                      img/main/blog-3-mobile@2x.webp 2x">
+                <!-- 1x - 270px, 2x - 540px -->
+                <img src="img/main/follow-1-desktop@1x.jpg" width="230" height="230"
+                  srcset="img/main/follow-1-desktop@2x.jpg 2x" alt="layered сhoker">
+              </picture>
+            </div>
+          </li>
+          <li>
+            <div class="follow-us__img">
+              <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/blog-3-desktop@1x.webp 1x,
+                      img/main/blog-3-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-3-tablet@1x.webp 1x,
+                      img/main/blog-3-tablet@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-3-mobile@1x.webp 1x,
+                      img/main/blog-3-mobile@2x.webp 2x">
+                <!-- 1x - 270px, 2x - 540px -->
+                <img src="img/main/follow-2-desktop@1x.jpg" width="399" height="412"
+                  srcset="img/main/follow-2-desktop@2x.jpg 2x" alt="layered сhoker">
+              </picture>
+            </div>
+          </li>
+          <li>
+            <div class="follow-us__img">
+              <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/blog-3-desktop@1x.webp 1x,
+                      img/main/blog-3-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-3-tablet@1x.webp 1x,
+                      img/main/blog-3-tablet@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-3-mobile@1x.webp 1x,
+                      img/main/blog-3-mobile@2x.webp 2x">
+                <!-- 1x - 270px, 2x - 540px -->
+                <img src="img/main/follow-3-desktop@1x.jpg" width="230" height="230"
+                  srcset="img/main/follow-3-desktop@2x.jpg 2x" alt="layered сhoker">
+              </picture>
+            </div>
+          </li>
+          <li>
+            <div class="follow-us__img">
+              <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/blog-3-desktop@1x.webp 1x,
+                      img/main/blog-3-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-3-tablet@1x.webp 1x,
+                      img/main/blog-3-tablet@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-3-mobile@1x.webp 1x,
+                      img/main/blog-3-mobile@2x.webp 2x">
+                <!-- 1x - 270px, 2x - 540px -->
+                <img src="img/main/follow-4-desktop@1x.jpg" width="230" height="230"
+                  srcset="img/main/follow-4-desktop@2x.jpg 2x" alt="layered сhoker">
+              </picture>
+            </div>
+          </li>
+          <li>
+            <div class="follow-us__img">
+              <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/follow-1-desktop@1x.webp 1x,
+                      img/main/follow-1-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-3-tablet@1x.webp 1x,
+                      img/main/blog-3-tablet@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-3-mobile@1x.webp 1x,
+                      img/main/blog-3-mobile@2x.webp 2x">
+                <!-- 1x - 270px, 2x - 540px -->
+                <img src="img/main/follow-5-desktop@1x.jpg" width="230" height="230"
+                  srcset="img/main/follow-5-desktop@2x.jpg 2x" alt="layered сhoker">
+              </picture>
+            </div>
+          </li>
+          <li>
+            <div class="follow-us__img">
+              <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/follow-1-desktop@1x.webp 1x,
+                      img/main/follow-1-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-3-tablet@1x.webp 1x,
+                      img/main/blog-3-tablet@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-3-mobile@1x.webp 1x,
+                      img/main/blog-3-mobile@2x.webp 2x">
+                <!-- 1x - 270px, 2x - 540px -->
+                <img src="img/main/follow-6-desktop@1x.jpg" width="230" height="230"
+                  srcset="img/main/follow-6-desktop@2x.jpg 2x" alt="layered сhoker">
+              </picture>
+            </div>
+          </li>
+          <li>
+            <div class="follow-us__img">
+              <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/main/follow-1-desktop@1x.webp 1x,
+                      img/main/follow-1-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/main/blog-3-tablet@1x.webp 1x,
+                      img/main/blog-3-tablet@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/main/blog-3-mobile@1x.webp 1x,
+                      img/main/blog-3-mobile@2x.webp 2x">
+                <!-- 1x - 270px, 2x - 540px -->
+                <img src="img/main/follow-7-desktop@1x.jpg" width="230" height="230"
+                  srcset="img/main/follow-7-desktop@2x.jpg 2x" alt="layered сhoker">
+              </picture>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -397,7 +756,8 @@
           <ul>
             <li>
               <a href="#">
-                <svg class="social-networks__icon social-networks__icon--facebook" width="8" height="15" viewbox="0 0 8 15">
+                <svg class="social-networks__icon social-networks__icon--facebook" width="8" height="15"
+                  viewbox="0 0 8 15">
                   <use xlink:href="img/sprite_auto.svg#icon-facebook"></use>
                 </svg>
                 <span>Facebook</span>
@@ -433,6 +793,7 @@
     </div>
   </footer>
 
+  <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 
 </body>

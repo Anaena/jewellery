@@ -1,6 +1,7 @@
 .new-jewellery {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
+  text-align: center;
 }
 
 .new-jewellery__container {
@@ -9,7 +10,7 @@
 
   @media (max-width: $tablet-width) {
     padding-top: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 22px;
   }
 
   & h2 {
