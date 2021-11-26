@@ -52,20 +52,6 @@
       background-size: cover;
     }
   }
-}
-
-.promo__container {
-  z-index: 1;
-
-  @media (max-width: $tablet-width) {
-    // padding-right: 20px;
-    padding-right: 65px;
-  }
-
-  @media (max-width: $mobile-width) {
-    padding-right: 15px;
-    // padding-right: 0;
-  }
 
   & h1 {
     @include font($cormorant-garamond, normal, 700);
@@ -82,6 +68,73 @@
       margin-top: 39px;
     }
   }
+}
+
+.promo--catalog {
+  min-height: 261px;
+  background-image: url("../img/catalog/catalog-bg-desktop@1x.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: $tablet-width) {
+    background-image: url("../img/catalog/catalog-bg-tablet@1x.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (max-width: $mobile-width) {
+    background-image: url("../img/catalog/catalog-bg-mobile@1x.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/catalog/catalog-bg-desktop@2x.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (max-width: $tablet-width) {
+      background-image: url("../img/catalog/catalog-bg-tablet@2x.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    @media (max-width: $mobile-width) {
+      background-image: url("../img/catalog/catalog-bg-mobile@2x.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  & h1 {
+    @include font($cormorant-garamond, normal, 700);
+    font-size: 34px;
+    line-height: 44px;
+    margin: 16px 0 3px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+
+    @media (max-width: $mobile-width) {
+      font-size: 38px;
+      line-height: 49px;
+      margin-top: 39px;
+    }
+  }
+}
+
+.promo__container {
+  z-index: 1;
+
+  @media (max-width: $tablet-width) {
+    padding-right: 65px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-right: 15px;
+  }
 
   & span {
     @include font($cormorant-garamond, italic, 400);
@@ -93,6 +146,23 @@
 
     @media (max-width: $mobile-width) {
       font-size: 34px;
+      line-height: 44px;
+      position: relative;
+      top: -7px;
+    }
+  }
+
+  & p {
+    @include font($cormorant-garamond, italic, 500);
+    display: block;
+    margin: 0 0 20px;
+    font-size: 22px;
+    line-height: 29px;
+    text-transform: none;
+    color: $white;
+
+    @media (max-width: $mobile-width) {
+      font-size: 22px;
       line-height: 44px;
       position: relative;
       top: -7px;

@@ -1,38 +1,29 @@
 .accordion {
-  max-width: 970px;
   padding: 0;
   list-style: none;
-
-  @media (max-width: $tablet-width) {
-    min-width: 678px;
-  }
-
-  @media (max-width: $mobile-width) {
-    min-width: 290px;
-  }
 }
 
-.accordion--nojs {
-  & .accordion__item {
-    padding: 42px 40px;
+// .accordion--nojs {
+//   & .accordion__item {
+//     padding: 42px 40px;
 
-    @media (max-width: $tablet-width) {
-      padding: 42px 50px;
-    }
+//     @media (max-width: $tablet-width) {
+//       padding: 42px 50px;
+//     }
 
-    @media (max-width: $mobile-width) {
-      padding: 17px 24px 19px;
-    }
-  }
+//     @media (max-width: $mobile-width) {
+//       padding: 17px 24px 19px;
+//     }
+//   }
 
-  & .accordion__content {
-    display: flex;
-  }
+//   & .accordion__content {
+//     display: flex;
+//   }
 
-  & .accordion__title button {
-    display: none;
-  }
-}
+//   & .accordion__title button {
+//     display: none;
+//   }
+// }
 
 .accordion__item {
   min-height: 111px;
@@ -45,6 +36,18 @@
   @media (max-width: $mobile-width) {
     min-height: 81px;
     padding: 19px 24px 18px;
+  }
+
+  .no-js & {
+    padding: 42px 40px;
+
+    @media (max-width: $tablet-width) {
+      padding: 42px 50px;
+    }
+
+    @media (max-width: $mobile-width) {
+      padding: 17px 24px 19px;
+    }
   }
 }
 
@@ -60,6 +63,22 @@
 
 .accordion__item--active {
   .accordion__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .accordion__icon--open {
+    display: none;
+  }
+
+  .accordion__icon--hide {
+    display: flex;
+  }
+}
+
+.accordion__fieldset--active {
+  .accordion__filter-content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -118,6 +137,10 @@
     @media (max-width: $mobile-width) {
       height: 23px;
     }
+
+    .no-js & {
+      display: none;
+    }
   }
 
   & svg {
@@ -168,6 +191,61 @@
   }
 }
 
+.accordion__filter-title {
+  & button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 15px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    @media (max-width: $tablet-width) {
+      width: 24px;
+      height: 20px;
+    }
+
+    @media (max-width: $mobile-width) {
+      height: 23px;
+    }
+  }
+
+  & svg {
+    width: 17px;
+    height: 10px;
+    stroke: $medium-wood;
+
+    @media (max-width: $tablet-width) {
+      width: 23px;
+      height: 12px;
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 20px;
+      height: 10px;
+    }
+  }
+
+  &:hover h3 {
+    opacity: 0.5;
+  }
+
+  & button:focus svg,
+  &:hover svg {
+    stroke: $black-wood;
+  }
+
+  & button:active svg,
+  &:active h3,
+  &:active svg {
+    opacity: 0.7;
+  }
+}
+
 .accordion__icon--open {
   display: flex;
 }
@@ -202,4 +280,12 @@
       line-height: 20px;
     }
   }
+
+  .no-js & {
+    display: flex;
+  }
+}
+
+.accordion__filter-content {
+  display: none;
 }

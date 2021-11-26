@@ -44,6 +44,16 @@
 }
 
 .faq__accordion {
+  max-width: 970px;
   margin: 0 auto;
+  list-style: none;
   border: 1px solid $medium-wood;
+
+  @media (max-width: $tablet-width) {
+    min-width: 678px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-width: 290px;
+  }
 }

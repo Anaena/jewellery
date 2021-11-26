@@ -24,7 +24,7 @@
     <!-- page-header__container--active - добавляется если меню открыто -->
     <div class="page-header__container container page-header__container--nojs page-header__container--active">
       <!-- main-nav__toggle - кнопка открытия меню -->
-      <button class="page-header__nav-toggle" type="button" aria-label="Click to open">
+      <button class="page-header__nav-toggle" type="button" aria-label="Click to open navigation">
         <svg class="page-header__icon" width="25" height="18" viewbox="0 0 25 18">
           <use xlink:href="img/sprite_auto.svg#icon-burger">
           </use>
@@ -93,7 +93,8 @@
     </div>
   </header>
 
-  <main class="page-main">
+  <!--no-js - открывает все вкладки когда нет js-->
+  <main class="page-main no-js">
     <section class="promo promo--main">
       <div class="promo__container container">
         <h1>PERFECTION <span>made to be yours</span></h1>
@@ -102,8 +103,7 @@
     <section class="new-jewellery">
       <div class="new-jewellery__container container">
         <h2>New In</h2>
-        <!--slider--nojs - открывает все вкладки аккордеона когда нет js-->
-        <div class="slider slider--nojs">
+        <div class="slider">
           <div class="slider__controls">
             <button class="slider__button slider__button--prev" type="button" aria-label="press for prev">
               <svg width="30" height="11" viewbox="0 0 30 11" fill="none">
@@ -120,7 +120,7 @@
           </div>
           <a class="slider__link" href="#">Shop Now</a>
           <div class="slider__content">
-            <ul class="slider__list slider__list--">
+            <ul class="slider__list">
               <li>
                 <div class="slider__card card">
                   <h3>
@@ -473,8 +473,7 @@
     <section class="faq">
       <div class="faq__container container">
         <h2>Frequently asked questions</h2>
-        <!--accordion--nojs - открывает все вкладки аккордеона когда нет js-->
-        <ul class="faq__accordion accordion accordion--nojs">
+        <ul class="faq__accordion accordion">
           <!--  accordion__item--active открывает вкладкe аккордеона-->
           <li class="faq__item accordion__item">
             <div class="accordion__title">
@@ -573,8 +572,8 @@
                       img/main/follow-2-tablet@2x.webp 2x">
                 <source type="image/webp" media="(max-width: 768px)" srcset="img/main/follow-2-mobile@1x.webp 1x,
                       img/main/follow-2-mobile@2x.webp 2x">
-                <!-- 1x - 230px, 2x - 460px -->
-                <img src="img/main/follow-2-desktop@1x.jpg" width="230" height="230" srcset="img/main/follow-2-tablet@1x.jpg 133w, img/main/follow-2-tablet@2x.jpg 266w, img/main/follow-2-desktop@1x.jpg 230w, img/main/follow-2-desktop@2x.jpg 460w" sizes="(min-width: 1024px) 399px, ((min-width: 1024px) and (min-resolution: 2dppx)) 798px, (min-width: 768px) 231px, ((min-width: 768px) and (min-resolution: 2dppx)) 462px (max-width: 767px) 133px, ((max-width: 767px) and (min-resolution: 2dppx)) 266px" alt="">
+                <!-- 1x - 399px, 2x - 460px -->
+                <img src="img/main/follow-2-desktop@1x.jpg" width="399" height="412" srcset="img/main/follow-2-tablet@1x.jpg 133w, img/main/follow-2-tablet@2x.jpg 266w, img/main/follow-2-desktop@1x.jpg 230w, img/main/follow-2-desktop@2x.jpg 460w" sizes="(min-width: 1024px) 399px, ((min-width: 1024px) and (min-resolution: 2dppx)) 798px, (min-width: 768px) 231px, ((min-width: 768px) and (min-resolution: 2dppx)) 462px, (max-width: 767px) 133px, ((max-width: 767px) and (min-resolution: 2dppx)) 266px" alt="">
               </picture>
             </div>
           </li>
