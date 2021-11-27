@@ -123,6 +123,14 @@
       margin-top: 39px;
     }
   }
+
+  .promo__container {
+    @media (max-width: $tablet-width) {
+      padding-right: 45px;
+      padding-left: 45px;
+      text-align: center;
+    }
+  }
 }
 
 .promo__container {

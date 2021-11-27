@@ -1,4 +1,6 @@
 .filters {
+  .filters__toggle-button:hover,
+  .filters__toggle-button:focus,
   button[type="submit"]:hover,
   button[type="submit"]:focus {
     outline: none;
@@ -16,11 +18,31 @@
 
 .filters__toggle-button {
   display: none;
+
+  @media (max-width: 1216px) {
+    @include font($poppins, normal, 500);
+    font-size: 16px;
+    line-height: 21px;
+    display: block;
+    width: 100%;
+    min-width: 678px;
+    min-height: 68px;
+    margin-bottom: 50px;
+    background-color: $medium-wood;
+    border: 1px solid $medium-wood;
+    color: $white;
+    cursor: pointer;
+    outline: none;
+  }
 }
 
 .filters__catalog-filter {
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1216px) {
+    display: none;
+  }
 
   & [type="submit"],
   & [type="reset"] {

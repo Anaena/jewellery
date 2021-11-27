@@ -52,6 +52,11 @@
   column-gap: 43px;
   padding-top: 80px;
 
+  @media (max-width: 1216px) {
+    grid-template-columns: 1fr;
+    padding-top: 50px;
+  }
+
   & .page-main__filters {
     margin-right: 7px;
   }
