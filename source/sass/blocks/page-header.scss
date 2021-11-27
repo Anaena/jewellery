@@ -60,45 +60,53 @@
   @media (max-width: $mobile-width) {
     row-gap: 30px;
   }
-}
 
-.page-header__container--active .page-header__search-form {
-  @media (max-width: $tablet-width) {
-    display: flex;
-    align-items: center;
-    grid-column: 1/-1;
-    grid-row: 2;
-    height: 40px;
-    padding: 7px 12px;
-    background: $form-shadow;
-    border-radius: 21px;
+  & .page-header__search-form {
+    @media (max-width: $tablet-width) {
+      display: flex;
+      align-items: center;
+      grid-column: 1/-1;
+      grid-row: 2;
+      height: 40px;
+      padding: 7px 12px;
+      background: $form-shadow;
+      border-radius: 21px;
+    }
+  }
+
+  & .page-header__icon {
+    stroke: $white;
+  }
+
+  & .page-header__logo-icon,
+  & .page-header__search-icon {
+    fill: $white;
+  }
+
+  & .page-header__login {
+    @media (max-width: $tablet-width) {
+      display: flex;
+      grid-column: 1/-1;
+      grid-row: 4;
+      justify-content: flex-start;
+      margin-right: 0;
+      padding: 0 0 13px;
+    }
+  }
+
+  & .page-header__nav-toggle {
+    &:hover svg,
+    &:focus svg {
+      stroke: currentColor;
+    }
+  }
+
+  & .page-header__search-icon {
+    width: 16px;
+    height: 16px;
   }
 }
 
-.page-header__container--active .page-header__icon {
-  stroke: $white;
-}
-
-.page-header__container--active .page-header__logo-icon,
-.page-header__container--active .page-header__search-icon {
-  fill: $white;
-}
-
-.page-header__container--active .page-header__login {
-  @media (max-width: $tablet-width) {
-    display: flex;
-    grid-column: 1/-1;
-    grid-row: 4;
-    justify-content: flex-start;
-    margin-right: 0;
-    padding: 0 0 13px;
-  }
-}
-
-.page-header__container--active .page-header__search-icon {
-  width: 16px;
-  height: 16px;
-}
 
 .page-header__container--nojs {
   @media (max-width: $tablet-width) {
@@ -122,6 +130,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    outline: none;
   }
 
   @media (max-width: $mobile-width) {
@@ -135,7 +144,7 @@
   &:hover svg,
   &:focus svg {
     outline: none;
-    opacity: 0.7;
+    stroke: $medium-wood;
   }
 
   &:active svg {
@@ -240,7 +249,15 @@
 .page-header__cart-link:hover,
 .page-header__cart-link:focus {
   outline: none;
-  opacity: 0.7;
+  color: $medium-wood;
+}
+
+.page-header__login-link:hover,
+.page-header__login-link:focus {
+  @media (max-width: $tablet-width) {
+    color: $white;
+    opacity: 0.7;
+  }
 }
 
 .page-header__login-link:active,
@@ -280,6 +297,11 @@
       fill: none;
       stroke: $black-wood;
     }
+  }
+
+  &:hover svg,
+  &:focus svg {
+    stroke: currentColor;
   }
 }
 

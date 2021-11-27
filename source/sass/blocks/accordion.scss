@@ -3,28 +3,6 @@
   list-style: none;
 }
 
-// .accordion--nojs {
-//   & .accordion__item {
-//     padding: 42px 40px;
-
-//     @media (max-width: $tablet-width) {
-//       padding: 42px 50px;
-//     }
-
-//     @media (max-width: $mobile-width) {
-//       padding: 17px 24px 19px;
-//     }
-//   }
-
-//   & .accordion__content {
-//     display: flex;
-//   }
-
-//   & .accordion__title button {
-//     display: none;
-//   }
-// }
-
 .accordion__item {
   min-height: 111px;
   padding: 44px 46px 40px 42px;
@@ -78,10 +56,22 @@
 }
 
 .accordion__fieldset--active {
+  .accordion__filter-title {
+    margin-bottom: 21px;
+  }
+
+  .accordion__filter-title--range {
+    margin-bottom: 10px;
+  }
+
   .accordion__filter-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 13px;
+  }
+
+  .accordion__filter-content--range {
+    display: block;
   }
 
   .accordion__icon--open {
@@ -165,7 +155,7 @@
 
   & button:focus svg,
   &:hover svg {
-    stroke: $black-wood;
+    fill: $medium-wood;
   }
 
   & button:active svg,
@@ -236,7 +226,7 @@
 
   & button:focus svg,
   &:hover svg {
-    stroke: $black-wood;
+    fill: $medium-wood;
   }
 
   & button:active svg,
@@ -244,6 +234,15 @@
   &:active svg {
     opacity: 0.7;
   }
+
+  // & button:focus ~ h3,
+  // & button:hover ~ h3 {
+  //   opacity: 0.7;
+  // }
+
+  // & button:active ~ h3 {
+  //   opacity: 0.5;
+  // }
 }
 
 .accordion__icon--open {

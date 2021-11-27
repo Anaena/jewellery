@@ -2,6 +2,7 @@
   display: grid;
   justify-items: center;
   row-gap: 20px;
+  text-align: center;
 
   @media (max-width: $mobile-width) {
     row-gap: 15px;

@@ -87,36 +87,34 @@ $('.slider__list').on('afterChange', makeSlidesCounter);
 // Accordion
 
 
-accordionBlocks.forEach((accordeon) => {
-  accordeon.classList.remove('accordion--nojs');
-  if (accordionTitle) {
-    accordionTitle.forEach((item) =>
-      item.addEventListener('click', () => {
-        const parent = item.parentNode;
+if (accordionTitle) {
+  accordionTitle.forEach((item) =>
+    item.addEventListener('click', () => {
+      const parent = item.parentNode;
 
-        if (parent.classList.contains('accordion__item--active')) {
-          parent.classList.remove('accordion__item--active');
-        } else {
-          accordionItem.forEach((child) =>
-            child.classList.remove('accordion__item--active'));
-          parent.classList.toggle('accordion__item--active');
-        }
-      })
-    );
-  }
-  if (accordionFilterTitle) {
-    accordionFilterTitle.forEach((item) =>
-      item.addEventListener('click', () => {
-        const parent = item.parentNode;
+      if (parent.classList.contains('accordion__item--active')) {
+        parent.classList.remove('accordion__item--active');
+      } else {
+        accordionItem.forEach((child) =>
+          child.classList.remove('accordion__item--active'));
+        parent.classList.toggle('accordion__item--active');
+      }
+    })
+  );
+}
 
-        if (parent.classList.contains('accordion__fieldset--active')) {
-          parent.classList.remove('accordion__fieldset--active');
-        } else {
-          accordionFilterItem.forEach((child) =>
-            child.classList.remove('accordion__fieldset--active'));
-          parent.classList.toggle('accordion__fieldset--active');
-        }
-      })
-    );
-  }
-});
+if (accordionFilterTitle) {
+  accordionFilterTitle.forEach((item) =>
+    item.addEventListener('click', () => {
+      const parent = item.parentNode;
+
+      if (parent) {
+        parent.classList.toggle('accordion__fieldset--active');
+      } else {
+        accordionFilterItem.forEach((child) =>
+          child.classList.remove('accordion__fieldset--active'));
+        parent.classList.toggle('accordion__fieldset--active');
+      }
+    })
+  );
+}

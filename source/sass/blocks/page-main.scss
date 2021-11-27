@@ -48,11 +48,11 @@
 
 .page-main__container--catalog {
   display: grid;
-  grid-template-columns: 22% 66%;
-  column-gap: 50px;
+  grid-template-columns: 22% auto;
+  column-gap: 43px;
   padding-top: 80px;
 
   & .page-main__filters {
-    margin-right: 5px;
+    margin-right: 7px;
   }
 }

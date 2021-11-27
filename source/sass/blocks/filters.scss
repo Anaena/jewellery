@@ -1,4 +1,17 @@
 .filters {
+  button[type="submit"]:hover,
+  button[type="submit"]:focus {
+    outline: none;
+    background-color: $white;
+    color: $black-wood;
+  }
+
+  button[type="reset"]:hover,
+  button[type="reset"]:focus {
+    outline: none;
+    background-color: $medium-wood;
+    color: $white;
+  }
 }
 
 .filters__toggle-button {
@@ -6,11 +19,35 @@
 }
 
 .filters__catalog-filter {
+  display: flex;
+  flex-direction: column;
+
+  & [type="submit"],
+  & [type="reset"] {
+    @include font($poppins, normal, 500);
+    font-size: 16px;
+    line-height: 21px;
+    min-height: 68px;
+    border: 1px solid $medium-wood;
+    cursor: pointer;
+  }
+
+  & [type="submit"] {
+    margin-bottom: 25px;
+    color: $white;
+    background-color: $medium-wood;
+  }
+
+  & [type="reset"] {
+    background-color: inherit;
+    color: $black-wood;
+  }
 }
 
 .filters__item {
+  max-width: 250px;
   margin: 0;
-  padding: 24px 25px 23px;
+  padding: 24px 21px 23px 25px;
   border: none;
   border-right: 1px solid $medium-wood;
   border-left: 1px solid $medium-wood;
@@ -21,6 +58,11 @@
   border-top: 1px solid $medium-wood;
 }
 
+.filters__item:last-of-type {
+  margin-bottom: 35px;
+  padding-bottom: 15px;
+}
+
 .filters__title {
   width: 100%;
   display: flex;
@@ -28,6 +70,7 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 
   @media (max-width: $mobile-width) {
     align-items: flex-start;
@@ -49,40 +92,109 @@
 }
 
 .filters__content {
+  padding-left: 10px;
 }
 
 .filters__product {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  & input {
+    position: absolute;
+    appearance: none;
+  }
+
+  & span {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $medium-wood;
+  }
+
+  & label {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    padding-left: 24px;
+    color: $black-wood;
+  }
+
+  & label:hover,
+  & label:focus {
+    color: $medium-wood;
+  }
+
+  & input:checked + span {
+    background-color: $medium-wood;
+  }
+
+  & input:hover + span,
+  & input:focus + span {
+    box-shadow: 0 0 3px 2px $medium-wood;
+  }
 }
 
 .filters__range {
-
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 202px;
+  height: 23px;
+  margin-left: -10px;
+  margin-bottom: 5px;
+  padding-top: 13px;
 }
-
-.filters__range--min {
-}
-
 
 .filters__scale {
+  height: 1px;
+  background: $desert-storm;
 }
 
 .filters__bar {
+  width: 70%;
+  height: 1px;
+  background: $medium-wood;
 }
 
 .filters__toggle {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  background-color: $medium-wood;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.filters__toggle--min {
-}
+.filters__toggle--min {}
 
-.filters__toggle--max {
-}
+.filters__toggle--max {}
 
 .filters__price-controls {
+  display: flex;
+  max-width: 202px;
 }
 
-.filters__price-range {}
+.filters__price-range {
+  width: 50%;
+  display: flex;
+  padding-left: 27px;
 
-.filters__price-range--min {}
-
-.filters__price-range--max {
+  input {
+    @include font($poppins, normal, 500);
+    font-size: 14px;
+    line-height: 18px;
+    width: 100%;
+    border: none;
+    background-color: inherit;
+  }
 }
+
+.filters__price-range--min {
+  margin-right: 10px;
+}
+
+.filters__price-range--max {}
