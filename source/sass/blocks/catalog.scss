@@ -24,7 +24,7 @@
 
   li {
     @media (max-width: $tablet-width) {
-      max-width: 206px;
+      min-width: 206px;
       margin: 0;
       padding: 0;
     }
@@ -45,8 +45,10 @@
     height: 100%;
 
     @media (max-width: $tablet-width) {
-      max-width: 206px;
-      max-height: 208px;
+      min-width: 206px;
+      min-height: 208px;
+      max-width: 270px;
+      max-height: 272px;
     }
 
     @media (max-width: $mobile-width) {
@@ -62,8 +64,10 @@
     background-color: $very-dark-brown;
 
     @media (max-width: $tablet-width) {
-      max-width: 206px;
-      max-height: 208px;
+      min-width: 206px;
+      min-height: 208px;
+      max-width: 270px;
+      max-height: 272px;
     }
 
     @media (max-width: $mobile-width) {
