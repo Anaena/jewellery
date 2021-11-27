@@ -34,6 +34,11 @@
     cursor: pointer;
     outline: none;
   }
+
+  @media (max-width: $mobile-width) {
+    min-width: 290px;
+    margin-bottom: 40px;
+  }
 }
 
 .filters__catalog-filter {

@@ -1,6 +1,10 @@
 .pagination--catalog {
   border-top: 1px solid $seashell;
 
+  @media (max-width: $mobile-width) {
+    border-top: none;
+  }
+
   .pagination__container {
     display: grid;
     grid-template-columns: 25% 1fr 2fr 1fr;
@@ -10,6 +14,12 @@
     @media (max-width: $tablet-width) {
       grid-template-columns: repeat(3, 1fr);
       padding-top: 38px;
+    }
+
+    @media (max-width: $mobile-width) {
+      grid-template-columns: 1fr;
+      padding-top: 10px;
+      padding-bottom: 64px;
     }
   }
 
@@ -27,6 +37,17 @@
     @media (max-width: $tablet-width) {
       grid-column: 2;
       padding-left: 0;
+    }
+
+    @media (max-width: $mobile-width) {
+      display: flex;
+      grid-column: 1;
+    }
+
+    li {
+      @media (max-width: $mobile-width) {
+        display: block;
+      }
     }
   }
 
@@ -52,6 +73,10 @@
       grid-column: 1;
       padding-left: 0;
     }
+
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
   }
 
   & .pagination__link--next {
@@ -61,11 +86,19 @@
     @media (max-width: $tablet-width) {
       grid-column: 3;
     }
+
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
   }
 
   & .pagination__item {
     outline: none;
     padding: 0.4em;
+
+    @media (max-width: $mobile-width) {
+      padding: 0.7em;
+    }
 
     &:hover,
     &:focus {
