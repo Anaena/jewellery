@@ -86,7 +86,6 @@
 
   & li:nth-child(7n+3),
   & li:nth-child(7n+4) {
-
     @media (max-width: $mobile-width) {
       display: none;
     }

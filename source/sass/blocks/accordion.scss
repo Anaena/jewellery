@@ -70,6 +70,10 @@
     @media (max-width: $tablet-width) {
       margin-bottom: 16px;
     }
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 20px;
+    }
   }
 
   .accordion__filter-content {
