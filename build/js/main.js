@@ -1,43 +1,122 @@
 'use strict';
-const body = document.querySelector('body');
-const mainHeaderElement = document.querySelector('.page-header');
-const pageHeaderContainer = document.querySelector('.page-header__container');
-const menuButtonElement = document.querySelector('.page-header__nav-toggle');
-const pageHeaderNav = document.querySelector('.page-header__nav');
-const jewellerySlider = document.querySelector('.slider');
-const accordionBlocks = document.querySelectorAll('.accordion');
-const accordionItem = document.querySelectorAll('.accordion__item');
-const accordionTitle = document.querySelectorAll('.accordion__title');
-const accordionFilterItem = document.querySelectorAll('.accordion__fieldset');
-const accordionFilterTitle = document.querySelectorAll('.accordion__filter-title');
-const pageMain = document.querySelector('.page-main');
+const BODY = document.querySelector('body');
+const PAGEHEADERCONTAINER = document.querySelector('.page-header__container');
+const MENUBUTTONELEMENT = document.querySelector('.page-header__nav-toggle');
+const HEADERNAVIGATION = document.querySelector('.page-header__nav');
+const PAGEMAIN = document.querySelector('.page-main');
+const FILTER = document.querySelector('.filters__wrapper');
+const FILTEROPENBUTTON = document.querySelector('.filters__open-button');
+const FILTERCLOSEBUTTON = document.querySelector('.filters__close-button');
 
-pageMain.classList.remove('no-js');
-pageHeaderNav.classList.remove('main-nav--opened');
-pageHeaderContainer.classList.remove('page-header__container--nojs');
-pageHeaderContainer.classList.remove('page-header__container--active');
-pageHeaderNav.classList.remove('main-nav--nojs');
-pageHeaderNav.classList.add('main-nav--closed');
+PAGEMAIN.classList.remove('no-js');
+PAGEHEADERCONTAINER.classList.remove('page-header__container--nojs');
+PAGEHEADERCONTAINER.classList.remove('page-header__container--active');
+HEADERNAVIGATION.classList.remove('main-nav--opened');
+HEADERNAVIGATION.classList.remove('main-nav--nojs');
+HEADERNAVIGATION.classList.add('main-nav--closed');
 
 // Menu
 
 const menuButtonHandler = () => {
-  if (pageHeaderNav.classList.contains('main-nav--closed')) {
-    pageHeaderNav.classList.remove('main-nav--closed');
-    pageHeaderNav.classList.add('main-nav--opened');
-    pageHeaderContainer.classList.add('page-header__container--active');
-    body.classList.add('page__body--locked');
+  if (HEADERNAVIGATION.classList.contains('main-nav--closed')) {
+    HEADERNAVIGATION.classList.remove('main-nav--closed');
+    HEADERNAVIGATION.classList.add('main-nav--opened');
+    PAGEHEADERCONTAINER.classList.add('page-header__container--active');
+    BODY.classList.add('page__body--locked');
   } else {
-    pageHeaderNav.classList.add('main-nav--closed');
-    pageHeaderNav.classList.remove('main-nav--opened');
-    pageHeaderContainer.classList.remove('page-header__container--active');
-    body.classList.remove('page__body--locked');
+    HEADERNAVIGATION.classList.add('main-nav--closed');
+    HEADERNAVIGATION.classList.remove('main-nav--opened');
+    PAGEHEADERCONTAINER.classList.remove('page-header__container--active');
+    BODY.classList.remove('page__body--locked');
   }
 };
 
-menuButtonElement.addEventListener('click', menuButtonHandler);
+MENUBUTTONELEMENT.addEventListener('click', menuButtonHandler);
+
+// Popup
+
+// const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+
+// const onPopupEscKeydown = (evt) => {
+//   if (isEscEvent(evt)) {
+//     evt.preventDefault();
+//     closeModal();
+//   }
+// };
+
+// const hideModal = (evt) => {
+//   if (evt.target === POPUP || evt === FILTER) {
+//     closeModal();
+//     closeFilter();
+//   }
+// };
+
+// Filter
+
+const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+
+const onPopupEscKeydown = (evt) => {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    // closeModal();
+    closeFilter();
+  }
+};
+
+const hideModal = (evt) => {
+  if (evt.target === POPUP || evt === FILTER) {
+    // closeModal();
+    closeFilter();
+  }
+};
+
+const closeFilter = () => {
+  FILTER.classList.remove('filters__wrapper--show');
+  BODY.classList.remove('page__body--locked');
+  FILTER.removeEventListener('click', hideModal);
+  document.removeEventListener('keydown', onPopupEscKeydown);
+};
+
+const openFilter = () => {
+  FILTER.classList.add('filters__wrapper--show');
+  BODY.classList.add('page__body--locked');
+  document.addEventListener('click', hideModal);
+  document.addEventListener('keydown', onPopupEscKeydown);
+};
+
+const switchFilterElement = (evt) => {
+  const filters = evt.target.closest('.filters');
+  const elements = [...filters.querySelector('form').elements];
+
+  if (evt.key === 'Tab') {
+    if (evt.shiftKey) {
+      if (evt.target === elements[0]) {
+        evt.preventDefault();
+        FILTERCLOSEBUTTON.focus();
+      }
+    } else {
+      if (evt.target === FILTERCLOSEBUTTON) {
+        evt.preventDefault();
+        elements[0].focus();
+      }
+    }
+  }
+};
+
+if (FILTER){
+  FILTER.addEventListener('keydown', switchFilterElement);
+}
+
+if (FILTEROPENBUTTON){
+  FILTEROPENBUTTON.addEventListener('click', openFilter);
+}
+
+if (FILTERCLOSEBUTTON){
+  FILTERCLOSEBUTTON.addEventListener('click', closeFilter);
+}
 
 //Slider
+const jewellerySlider = document.querySelector('.slider');
 
 const makeSlidesCounter = () =>{
   const countCurrent = $('.counter__current');
@@ -85,7 +164,11 @@ $('.slider__list').slick({
 $('.slider__list').on('afterChange', makeSlidesCounter);
 
 // Accordion
-
+const accordionBlocks = document.querySelectorAll('.accordion');
+const accordionItem = document.querySelectorAll('.accordion__item');
+const accordionTitle = document.querySelectorAll('.accordion__title');
+const accordionFilterItem = document.querySelectorAll('.accordion__fieldset');
+const accordionFilterTitle = document.querySelectorAll('.accordion__filter-title');
 
 if (accordionTitle) {
   accordionTitle.forEach((item) =>

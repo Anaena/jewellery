@@ -1,6 +1,6 @@
 .filters {
-  .filters__toggle-button:hover,
-  .filters__toggle-button:focus,
+  .filters__open-button:hover,
+  .filters__open-button:focus,
   button[type="submit"]:hover,
   button[type="submit"]:focus {
     outline: none;
@@ -14,12 +14,22 @@
     background-color: $medium-wood;
     color: $white;
   }
+
+  .filters__open-button:active,
+  button[type="reset"]:active,
+  button[type="submit"]:active {
+    opacity: 0.5;
+  }
+
+  .no-js & {
+    display: none;
+  }
 }
 
-.filters__toggle-button {
+.filters__open-button {
   display: none;
 
-  @media (max-width: 1216px) {
+  @media (max-width: $tablet-width) {
     @include font($poppins, normal, 500);
     font-size: 16px;
     line-height: 21px;
@@ -39,13 +49,97 @@
     min-width: 290px;
     margin-bottom: 40px;
   }
+
+  .no-js & {
+    display: none;
+  }
+}
+
+.filters__wrapper--show {
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    padding: 26px 0 30px;
+    background-color: $white;
+  }
+
+  .filters__catalog-filter {
+    @media (max-width: $tablet-width) {
+      display: flex;
+      max-width: 422px;
+      box-shadow: 0 5px 32px $filter-shadow;
+    }
+  }
+
+  .filters__item {
+    @media (max-width: $tablet-width) {
+      max-width: 422px;
+      padding: 35px 39px 35px 22px;
+      border-right: none;
+      border-left: none;
+      border-bottom: 1px solid $medium-wood;
+    }
+  }
+
+  .filters__item:first-of-type {
+    @media (max-width: $tablet-width) {
+      border-top: none;
+    }
+  }
+
+  .filters__item:last-of-type {
+    @media (max-width: $tablet-width) {
+      margin-bottom: 41px;
+      padding-bottom: 32px;
+    }
+  }
+
+  .filters__title h3 {
+    @media (max-width: $tablet-width) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+
+  .filters__product span {
+    @media (max-width: $tablet-width) {
+    width: 18px;
+    height: 18px;
+    }
+  }
+
+  .filters__product label {
+    @media (max-width: $tablet-width) {
+      font-size: 16px;
+      line-height: 21px;
+      padding-left: 28px;
+    }
+  }
+
+  .filters__close-button {
+    @media (max-width: $tablet-width) {
+      position: absolute;
+      display: block;
+      top: 10px;
+      left: 402px;
+      background-color: inherit;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+  }
 }
 
 .filters__catalog-filter {
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 1216px) {
+  @media (max-width: $tablet-width) {
     display: none;
   }
 
@@ -57,17 +151,29 @@
     min-height: 68px;
     border: 1px solid $medium-wood;
     cursor: pointer;
+
+    @media (max-width: $tablet-width) {
+      min-width: 362px;
+    }
   }
 
   & [type="submit"] {
     margin-bottom: 25px;
     color: $white;
     background-color: $medium-wood;
+
+    @media (max-width: $tablet-width) {
+      margin: 0 auto 25px 20px;
+    }
   }
 
   & [type="reset"] {
     background-color: inherit;
     color: $black-wood;
+
+    @media (max-width: $tablet-width) {
+      margin: 0 auto 0 20px;
+    }
   }
 }
 
@@ -171,6 +277,11 @@
   margin-left: -10px;
   margin-bottom: 5px;
   padding-top: 13px;
+
+  @media (max-width: $tablet-width) {
+    max-width: 304px;
+    margin-left: 0;
+  }
 }
 
 .filters__scale {
@@ -194,15 +305,32 @@
   background-color: $medium-wood;
   border-radius: 50%;
   cursor: pointer;
+
+  @media (max-width: $tablet-width) {
+    width: 18px;
+    height: 18px;
+  }
 }
 
-.filters__toggle--min {}
+// .filters__toggle--min {
+//   @media (max-width: $tablet-width) {
+//     left: 14%;
+//   }
+// }
 
-.filters__toggle--max {}
+// .filters__toggle--max {
+//   @media (max-width: $tablet-width) {
+//     left: 72%;
+//   }
+// }
 
 .filters__price-controls {
   display: flex;
   max-width: 202px;
+
+  @media (max-width: $tablet-width) {
+    max-width: 304px;
+  }
 }
 
 .filters__price-range {
@@ -217,6 +345,11 @@
     width: 100%;
     border: none;
     background-color: inherit;
+
+    @media (max-width: $tablet-width) {
+      font-size: 16px;
+      line-height: 21px;
+    }
   }
 }
 
@@ -225,3 +358,20 @@
 }
 
 .filters__price-range--max {}
+
+.filters__close-button {
+  display: none;
+
+  & svg {
+    fill: $black-wood;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: $medium-wood;
+  }
+
+  &:active svg {
+    opacity: 0.5;
+  }
+}

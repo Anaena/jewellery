@@ -103,125 +103,133 @@
     <div class="page-main__container page-main__container--catalog container">
       <section class="page-main__filters filters">
         <h2 class="visually-hidden">Filters</h2>
-        <button class="filters__toggle-button" type="button" aria-label="">Filter</button>
-        <form class="filters__catalog-filter accordion" method="get" action="https://echo.htmlacademy.ru">
-          <!--  accordion__fieldset--active открывает вкладкe аккордеона-->
-          <fieldset class="filters__item accordion__fieldset">
-            <div class="filters__title accordion__filter-title">
-              <h3>Product</h3>
-              <button type="button" aria-label="press for open or hide">
-                <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
-                  <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
-                </svg>
-                <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
-                  <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="filters__content accordion__filter-content">
-              <div class="filters__product">
-                <input class="visually-hidden" type="checkbox" name="product" id="filter-necklaces" checked>
-                <span></span>
-                <label for="filter-necklaces">Necklaces</label>
+        <button class="filters__open-button" type="button" aria-label="press to open filter">Filter</button>
+        <!--  filters__wrapper--show открывает фильтр на tablet и mobile экране -->
+        <div class="filters__wrapper filters__wrapper--show">
+          <form class="filters__catalog-filter accordion" method="get" action="https://echo.htmlacademy.ru">
+            <!--  accordion__fieldset--active открывает вкладкe аккордеона-->
+            <fieldset class="filters__item accordion__fieldset">
+              <div class="filters__title accordion__filter-title">
+                <h3>Product</h3>
+                <button type="button" aria-label="press for open or hide">
+                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                    <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
+                  </svg>
+                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                    <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
+                  </svg>
+                </button>
               </div>
-              <div class="filters__product">
-                <input class="visually-hidden" type="checkbox" name="product" id="filter-chokers" checked>
-                <span></span>
-                <label for="filter-chokers">Chokers</label>
-              </div>
-              <div class="filters__product">
-                <input class="visually-hidden" type="checkbox" name="product" id="filter-rings">
-                <span></span>
-                <label for="filter-rings">Rings</label>
-              </div>
-              <div class="filters__product">
-                <input class="visually-hidden" type="checkbox" name="product" id="filter-earrings" checked>
-                <span></span>
-                <label for="filter-earrings">Earrings</label>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset class="filters__item accordion__fieldset">
-            <div class="filters__title accordion__filter-title">
-              <h3>Material</h3>
-              <button type="button" aria-label="press for open or hide">
-                <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
-                  <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
-                </svg>
-                <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
-                  <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="filters__content accordion__filter-content">
-              <div class="filters__product">
-                <input class="visually-hidden" type="checkbox" name="material" id="filter-gold" checked>
-                <span></span>
-                <label for="filter-gold">Gold</label>
-              </div>
-              <div class="filters__product">
-                <input class="visually-hidden" type="checkbox" name="material" id="filter-silver">
-                <span></span>
-                <label for="filter-silver">Silver</label>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset class="filters__item accordion__fieldset">
-            <div class="filters__title accordion__filter-title">
-              <h3>Collection</h3>
-              <button type="button" aria-label="press for open or hide">
-                <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
-                  <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
-                </svg>
-                <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
-                  <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="filters__content accordion__filter-content">
-              <div class="filters__product">
-                <input class="visually-hidden" type="checkbox" name="collection" id="filter-pink-flamingo" checked>
-                <span></span>
-                <label for="filter-pink-flamingo">Pink flamingo</label>
-              </div>
-              <div class="filters__product">
-                <input class="visually-hidden" type="checkbox" name="collection" id="filter-dreams">
-                <span></span>
-                <label for="filter-dreams">Dreams</label>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset class="filters__item accordion__fieldset">
-            <div class="filters__title accordion__filter-title accordion__filter-title--range  ">
-              <h3>Price</h3>
-              <button type="button" aria-label="press for open or hide">
-                <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
-                  <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
-                </svg>
-                <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
-                  <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="filters__content accordion__filter-content accordion__filter-content--range">
-              <div class="filters__range">
-                <div class="filters__scale">
-                  <div class="filters__bar" style="width: 50%; margin-left: 27%"></div>
+              <div class="filters__content accordion__filter-content">
+                <div class="filters__product">
+                  <input class="visually-hidden" type="checkbox" name="product" id="filter-necklaces" checked>
+                  <span></span>
+                  <label for="filter-necklaces">Necklaces</label>
                 </div>
-                <div class="filters__toggle filters__toggle--min" tabindex="0" style="left: 22%"></div>
-                <div class="filters__toggle filters__toggle--max" tabindex="0" style="left: 74%"></div>
+                <div class="filters__product">
+                  <input class="visually-hidden" type="checkbox" name="product" id="filter-chokers" checked>
+                  <span></span>
+                  <label for="filter-chokers">Chokers</label>
+                </div>
+                <div class="filters__product">
+                  <input class="visually-hidden" type="checkbox" name="product" id="filter-rings">
+                  <span></span>
+                  <label for="filter-rings">Rings</label>
+                </div>
+                <div class="filters__product">
+                  <input class="visually-hidden" type="checkbox" name="product" id="filter-earrings" checked>
+                  <span></span>
+                  <label for="filter-earrings">Earrings</label>
+                </div>
               </div>
-              <div class="filters__price-controls">
-                <label class="filters__price-range filters__price-range--min">$<input type="number" name="min-price"
-                    value="55"></label>
-                <label class="filters__price-range filters__price-range--max">$<input type="number" name="max-price"
-                    value="155"></label>
+            </fieldset>
+            <fieldset class="filters__item accordion__fieldset">
+              <div class="filters__title accordion__filter-title">
+                <h3>Material</h3>
+                <button type="button" aria-label="press for open or hide">
+                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                    <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
+                  </svg>
+                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                    <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
+                  </svg>
+                </button>
               </div>
-            </div>
-          </fieldset>
-          <button type="submit">Apply</button>
-          <button type="reset">Clear All</button>
-        </form>
+              <div class="filters__content accordion__filter-content">
+                <div class="filters__product">
+                  <input class="visually-hidden" type="checkbox" name="material" id="filter-gold" checked>
+                  <span></span>
+                  <label for="filter-gold">Gold</label>
+                </div>
+                <div class="filters__product">
+                  <input class="visually-hidden" type="checkbox" name="material" id="filter-silver">
+                  <span></span>
+                  <label for="filter-silver">Silver</label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="filters__item accordion__fieldset">
+              <div class="filters__title accordion__filter-title">
+                <h3>Collection</h3>
+                <button type="button" aria-label="press for open or hide">
+                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                    <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
+                  </svg>
+                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                    <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="filters__content accordion__filter-content">
+                <div class="filters__product">
+                  <input class="visually-hidden" type="checkbox" name="collection" id="filter-pink-flamingo" checked>
+                  <span></span>
+                  <label for="filter-pink-flamingo">Pink flamingo</label>
+                </div>
+                <div class="filters__product">
+                  <input class="visually-hidden" type="checkbox" name="collection" id="filter-dreams">
+                  <span></span>
+                  <label for="filter-dreams">Dreams</label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="filters__item accordion__fieldset">
+              <div class="filters__title accordion__filter-title accordion__filter-title--range  ">
+                <h3>Price</h3>
+                <button type="button" aria-label="press for open or hide">
+                  <svg class="accordion__icon accordion__icon--open" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                    <use xlink:href="img/sprite_auto.svg#icon-tab-open"></use>
+                  </svg>
+                  <svg class="accordion__icon accordion__icon--hide" width="17" height="10" fill="none" viewbox="0 0 17 10">
+                    <use xlink:href="img/sprite_auto.svg#icon-tab-hide"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="filters__content accordion__filter-content accordion__filter-content--range">
+                <div class="filters__range">
+                  <div class="filters__scale">
+                    <div class="filters__bar" style="width: 55%; margin-left: 24%"></div>
+                  </div>
+                  <div class="filters__toggle filters__toggle--min" tabindex="0" style="left: 22%"></div>
+                  <div class="filters__toggle filters__toggle--max" tabindex="0" style="left: 74%"></div>
+                </div>
+                <div class="filters__price-controls">
+                  <label class="filters__price-range filters__price-range--min">$<input type="number" name="min-price"
+                      value="55"></label>
+                  <label class="filters__price-range filters__price-range--max">$<input type="number" name="max-price"
+                      value="155"></label>
+                </div>
+              </div>
+            </fieldset>
+            <button type="submit">Apply</button>
+            <button type="reset">Clear All</button>
+          </form>
+          <button class="filters__close-button" type="button" aria-label="close filter button">
+            <svg width="32" height="32" fill="none" viewbox="0 0 32 32">
+              <use xlink:href="img/sprite_auto.svg#icon-cross"></use>
+            </svg>
+          </button>
+        </div>
       </section>
 
       <section class="catalog">

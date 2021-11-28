@@ -58,16 +58,28 @@
 .accordion__fieldset--active {
   .accordion__filter-title {
     margin-bottom: 21px;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 23px;
+    }
   }
 
   .accordion__filter-title--range {
     margin-bottom: 10px;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 16px;
+    }
   }
 
   .accordion__filter-content {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 13px;
+
+    @media (max-width: $tablet-width) {
+      row-gap: 17px;
+    }
   }
 
   .accordion__filter-content--range {
