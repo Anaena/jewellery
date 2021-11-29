@@ -39,11 +39,7 @@ MENUBUTTONELEMENT.addEventListener('click', menuButtonHandler);
 
 // Popup
 
-const loginLogin = document.querySelector('[name="login"]');
-const loginPassword = document.querySelector('[name="password"]');
-
 const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
-const itemForm = document.querySelectorAll('.form__item');
 
 const onPopupEscKeydown = (evt) => {
   if (isEscEvent(evt)) {
@@ -61,14 +57,31 @@ const hideModal = (evt) => {
 
 // Form
 
-// let isStorageSupport = true;
+const loginLogin = document.querySelector('[name="login"]');
+const loginPassword = document.querySelector('[name="password"]');
+const itemForm = document.querySelectorAll('.form__item');
+
+let isStorageSupport = true;
 let storage = '';
 
 try {
   storage = localStorage.getItem('login');
 } catch (err) {
-  // isStorageSupport = false;
+  isStorageSupport = false;
 }
+
+const onFormSubmit = (evt) => {
+  if (!loginLogin.value || !loginPassword.value) {
+    evt.preventDefault();
+    POPUP.classList.remove('popup-error');
+    POPUP.offsetWidth = POPUP.offsetWidth;
+    POPUP.classList.add('popup-error');
+  } else {
+    if (isStorageSupport) {
+      localStorage.setItem('login', loginLogin.value);
+    }
+  }
+};
 
 const closeModal = () => {
   POPUP.classList.remove('popup--show');
@@ -95,7 +108,28 @@ const openModal = (evt) => {
   }
 };
 
-// POPUP.addEventListener('keydown', switchPopupElement);
+const switchPopupElement = (evt) => {
+  const popup = evt.target.closest('.popup');
+  const elements = [...popup.querySelector('form').elements];
+
+  if (evt.key === 'Tab') {
+    if (evt.shiftKey) {
+      if (evt.target === elements[0]) {
+        evt.preventDefault();
+        CLOSEPOPUPBUTTON.focus();
+      }
+    } else {
+      if (evt.target === CLOSEPOPUPBUTTON) {
+        evt.preventDefault();
+        elements[0].focus();
+      }
+    }
+  }
+};
+
+if (POPUP) {
+  POPUP.addEventListener('keydown', switchPopupElement);
+}
 
 if (LOGINLINK) {
   LOGINLINK.addEventListener('click', openModal);
@@ -105,26 +139,9 @@ if (CLOSEPOPUPBUTTON) {
   CLOSEPOPUPBUTTON.addEventListener('click', closeModal);
 }
 
-// POPUPFORM.addEventListener('submit', onFormSubmit);
+POPUPFORM.addEventListener('submit', onFormSubmit);
 
 // Filter
-
-// const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
-
-// const onPopupEscKeydown = (evt) => {
-//   if (isEscEvent(evt)) {
-//     evt.preventDefault();
-//     // closeModal();
-//     closeFilter();
-//   }
-// };
-
-// const hideModal = (evt) => {
-//   if (evt.target === POPUP || evt === FILTER) {
-//     // closeModal();
-//     closeFilter();
-//   }
-// };
 
 const closeFilter = () => {
   FILTER.classList.remove('filters__wrapper--show');

@@ -12,6 +12,7 @@ $form-shadow: rgba(255, 255, 255, 0.15);
 $white-shadow: rgba(255, 255, 255, 0.75);
 $filter-shadow: rgba(219, 213, 208, 0.24);
 $popup-shadow: rgba(226, 221, 215, 0.24);
+$red: #ff0000;
 
 // Font
 
@@ -29,3 +30,27 @@ $cormorant-garamond: "Cormorant Garamond", "Times New Roman", serif;
 $desktop-width: 1024px;
 $tablet-width: 1023px;
 $mobile-width: 767px;
+
+// Animation
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
