@@ -7,6 +7,10 @@ const PAGEMAIN = document.querySelector('.page-main');
 const FILTER = document.querySelector('.filters__wrapper');
 const FILTEROPENBUTTON = document.querySelector('.filters__open-button');
 const FILTERCLOSEBUTTON = document.querySelector('.filters__close-button');
+const POPUP = document.querySelector('.popup');
+const LOGINLINK = document.querySelector('.page-header__login-link');
+const CLOSEPOPUPBUTTON = document.querySelector('.popup__close');
+const POPUPFORM = document.querySelector('.popup__form');
 
 PAGEMAIN.classList.remove('no-js');
 PAGEHEADERCONTAINER.classList.remove('page-header__container--nojs');
@@ -35,40 +39,92 @@ MENUBUTTONELEMENT.addEventListener('click', menuButtonHandler);
 
 // Popup
 
-// const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
-
-// const onPopupEscKeydown = (evt) => {
-//   if (isEscEvent(evt)) {
-//     evt.preventDefault();
-//     closeModal();
-//   }
-// };
-
-// const hideModal = (evt) => {
-//   if (evt.target === POPUP || evt === FILTER) {
-//     closeModal();
-//     closeFilter();
-//   }
-// };
-
-// Filter
+const loginLogin = document.querySelector('[name="login"]');
+const loginPassword = document.querySelector('[name="password"]');
 
 const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+const itemForm = document.querySelectorAll('.form__item');
 
 const onPopupEscKeydown = (evt) => {
   if (isEscEvent(evt)) {
     evt.preventDefault();
-    // closeModal();
-    closeFilter();
+    closeModal();
   }
 };
 
 const hideModal = (evt) => {
   if (evt.target === POPUP || evt === FILTER) {
-    // closeModal();
+    closeModal();
     closeFilter();
   }
 };
+
+// Form
+
+// let isStorageSupport = true;
+let storage = '';
+
+try {
+  storage = localStorage.getItem('login');
+} catch (err) {
+  // isStorageSupport = false;
+}
+
+const closeModal = () => {
+  POPUP.classList.remove('popup--show');
+  BODY.classList.remove('page__body--locked');
+  POPUPFORM.reset();
+  itemForm.forEach((item) => {
+    item.classList.remove('form__item--error');
+  });
+  POPUP.removeEventListener('click', hideModal);
+  document.removeEventListener('keydown', onPopupEscKeydown);
+};
+
+const openModal = (evt) => {
+  evt.preventDefault();
+  POPUP.classList.add('popup--show');
+  BODY.classList.add('page__body--locked');
+  document.addEventListener('click', hideModal);
+  document.addEventListener('keydown', onPopupEscKeydown);
+  if (storage) {
+    loginLogin.value = storage;
+    loginPassword.focus();
+  } else {
+    loginLogin.focus();
+  }
+};
+
+// POPUP.addEventListener('keydown', switchPopupElement);
+
+if (LOGINLINK) {
+  LOGINLINK.addEventListener('click', openModal);
+}
+
+if (CLOSEPOPUPBUTTON) {
+  CLOSEPOPUPBUTTON.addEventListener('click', closeModal);
+}
+
+// POPUPFORM.addEventListener('submit', onFormSubmit);
+
+// Filter
+
+// const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+
+// const onPopupEscKeydown = (evt) => {
+//   if (isEscEvent(evt)) {
+//     evt.preventDefault();
+//     // closeModal();
+//     closeFilter();
+//   }
+// };
+
+// const hideModal = (evt) => {
+//   if (evt.target === POPUP || evt === FILTER) {
+//     // closeModal();
+//     closeFilter();
+//   }
+// };
 
 const closeFilter = () => {
   FILTER.classList.remove('filters__wrapper--show');
@@ -113,6 +169,44 @@ if (FILTEROPENBUTTON) {
 
 if (FILTERCLOSEBUTTON) {
   FILTERCLOSEBUTTON.addEventListener('click', closeFilter);
+}
+
+// Accordion
+const accordionItem = document.querySelectorAll('.accordion__item');
+const accordionTitle = document.querySelectorAll('.accordion__title');
+const accordionFilterItem = document.querySelectorAll('.accordion__fieldset');
+const accordionFilterTitle = document.querySelectorAll('.accordion__filter-title');
+
+if (accordionTitle) {
+  accordionTitle.forEach((item) =>
+    item.addEventListener('click', () => {
+      const parent = item.parentNode;
+
+      if (parent.classList.contains('accordion__item--active')) {
+        parent.classList.remove('accordion__item--active');
+      } else {
+        accordionItem.forEach((child) =>
+          child.classList.remove('accordion__item--active'));
+        parent.classList.toggle('accordion__item--active');
+      }
+    })
+  );
+}
+
+if (accordionFilterTitle) {
+  accordionFilterTitle.forEach((item) =>
+    item.addEventListener('click', () => {
+      const parent = item.parentNode;
+
+      if (parent) {
+        parent.classList.toggle('accordion__fieldset--active');
+      } else {
+        accordionFilterItem.forEach((child) =>
+          child.classList.remove('accordion__fieldset--active'));
+        parent.classList.toggle('accordion__fieldset--active');
+      }
+    })
+  );
 }
 
 // Slider
@@ -163,41 +257,3 @@ $('.slider__list').slick({
   }],
 }).slick('refresh');
 $('.slider__list').on('afterChange', makeSlidesCounter);
-
-// Accordion
-const accordionItem = document.querySelectorAll('.accordion__item');
-const accordionTitle = document.querySelectorAll('.accordion__title');
-const accordionFilterItem = document.querySelectorAll('.accordion__fieldset');
-const accordionFilterTitle = document.querySelectorAll('.accordion__filter-title');
-
-if (accordionTitle) {
-  accordionTitle.forEach((item) =>
-    item.addEventListener('click', () => {
-      const parent = item.parentNode;
-
-      if (parent.classList.contains('accordion__item--active')) {
-        parent.classList.remove('accordion__item--active');
-      } else {
-        accordionItem.forEach((child) =>
-          child.classList.remove('accordion__item--active'));
-        parent.classList.toggle('accordion__item--active');
-      }
-    })
-  );
-}
-
-if (accordionFilterTitle) {
-  accordionFilterTitle.forEach((item) =>
-    item.addEventListener('click', () => {
-      const parent = item.parentNode;
-
-      if (parent) {
-        parent.classList.toggle('accordion__fieldset--active');
-      } else {
-        accordionFilterItem.forEach((child) =>
-          child.classList.remove('accordion__fieldset--active'));
-        parent.classList.toggle('accordion__fieldset--active');
-      }
-    })
-  );
-}

@@ -157,7 +157,7 @@
               </div>
               <div class="filters__content accordion__filter-content">
                 <div class="filters__product">
-                  <input class="visually-hidden" type="checkbox" name="material" id="filter-gold" checked>
+                  <input class="visually-hidden" type="checkbox" name="material" id="filter-gold">
                   <span></span>
                   <label for="filter-gold">Gold</label>
                 </div>
@@ -182,7 +182,7 @@
               </div>
               <div class="filters__content accordion__filter-content">
                 <div class="filters__product">
-                  <input class="visually-hidden" type="checkbox" name="collection" id="filter-pink-flamingo" checked>
+                  <input class="visually-hidden" type="checkbox" name="collection" id="filter-pink-flamingo">
                   <span></span>
                   <label for="filter-pink-flamingo">Pink flamingo</label>
                 </div>
@@ -648,8 +648,36 @@
     </div>
   </footer>
 
-  <!-- <script src="js/vendor.js"></script>
-  <script src="js/main.js"></script> -->
+  <!--popup--show - показывает форму обратной связи-->
+  <div class="popup">
+    <div class="popup__container">
+      <div class="popup__wrapper">
+        <h2>Log In</h2>
+        <form class="popup__form form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="form__item form__item--login">
+            <label class="visually-hidden" for="login-login">Your E-mail</label>
+            <input type="email" name="login" id="login-login" placeholder="Your E-mail" required>
+          </div>
+          <div class="form__item form__item--password">
+            <label class="visually-hidden" for="login-password">Your password</label>
+            <input type="password" name="password" id="login-password" placeholder="Password" required>
+            <a class="form__forgot-login" href="#">Forgot your password?</a>
+          </div>
+          <button class="form__submit" type="submit" aria-label="press to log in">Log
+            In</button>
+          <p>Don’t have an account?<a class="form__signup-link" href="#">Sign up</a></p>
+        </form>
+        <button class="popup__close" type="button" aria-label="popup close button">
+          <svg width="14" height="14" viewbox="0 0 14 14" fill="none" >
+            <use xlink:href="img/sprite_auto.svg#icon-log-cross"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 

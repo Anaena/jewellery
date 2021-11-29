@@ -1,0 +1,116 @@
+.form {
+  & p {
+    @include font($poppins, normal, 500);
+    font-size: 14px;
+    line-height: 21px;
+    color: $zorba;
+    text-align: center;
+    margin-right: 5px;
+  }
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+
+  & input {
+    @include font($poppins, normal, 500);
+    font-size: 14px;
+    line-height: 21px;
+    width: 100%;
+    min-height: 36px;
+    padding: 5px 0;
+    border: none;
+    border-bottom: 1px solid $black-wood;
+    background-color: transparent;
+    color: $black-wood;
+    outline: none;
+  }
+
+  & input::placeholder {
+    color: $zorba;
+  }
+
+  & input:hover,
+  & input:focus  {
+    border-bottom: 1px solid $medium-wood;
+  }
+}
+
+  // .form__item--login
+
+  .form__item--login {
+  }
+
+  // .form__item--password
+
+  .form__item--password {
+    margin-bottom: 45px;
+
+    & input {
+      margin-bottom: 5px;
+    }
+  }
+
+.form__forgot-login {
+  @include font($poppins, normal, 500);
+  font-size: 12px;
+  line-height: 18px;
+  color: $zorba;
+  text-decoration: none;
+  outline: none;
+  text-align: end;
+
+  &:hover,
+  &:focus {
+    color: $black-wood;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.form__submit {
+  @include font($poppins, normal, 500);
+  font-size: 16px;
+  line-height: 21px;
+  min-height: 68px;
+  background: $medium-wood;
+  border: 1px solid $medium-wood;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $white;
+    color: $black-wood;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.form__signup-link {
+  @include font($poppins, normal, 500);
+  font-size: 14px;
+  line-height: 21px;
+  color: $black-wood;
+  margin-left: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
