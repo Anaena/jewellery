@@ -5,6 +5,10 @@
     border-top: none;
   }
 
+  .no-js & {
+    display: none;
+  }
+
   .pagination__container {
     display: grid;
     grid-template-columns: 25% 1fr 2fr 1fr;

@@ -103,22 +103,23 @@ const switchFilterElement = (evt) => {
   }
 };
 
-if (FILTER){
+if (FILTER) {
   FILTER.addEventListener('keydown', switchFilterElement);
 }
 
-if (FILTEROPENBUTTON){
+if (FILTEROPENBUTTON) {
   FILTEROPENBUTTON.addEventListener('click', openFilter);
 }
 
-if (FILTERCLOSEBUTTON){
+if (FILTERCLOSEBUTTON) {
   FILTERCLOSEBUTTON.addEventListener('click', closeFilter);
 }
 
-//Slider
-const jewellerySlider = document.querySelector('.slider');
+// Slider
 
-const makeSlidesCounter = () =>{
+// const jewellerySlider = document.querySelector('.slider');
+
+const makeSlidesCounter = () => {
   const countCurrent = $('.counter__current');
   const countTotal = $('.counter__total');
   const currentSlide = $('.pagination__list li').index($('.pagination__list .slick-active'));
@@ -164,7 +165,6 @@ $('.slider__list').slick({
 $('.slider__list').on('afterChange', makeSlidesCounter);
 
 // Accordion
-const accordionBlocks = document.querySelectorAll('.accordion');
 const accordionItem = document.querySelectorAll('.accordion__item');
 const accordionTitle = document.querySelectorAll('.accordion__title');
 const accordionFilterItem = document.querySelectorAll('.accordion__fieldset');

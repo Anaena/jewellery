@@ -52,7 +52,7 @@
   column-gap: 43px;
   padding-top: 80px;
 
-  @media (max-width: 1216px) {
+  @media (max-width: $tablet-width) {
     grid-template-columns: 1fr;
     padding-top: 50px;
   }

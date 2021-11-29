@@ -77,12 +77,16 @@
   }
 
   & .page-header__icon {
-    stroke: $white;
+    @media (max-width: $tablet-width) {
+      stroke: $white;
+    }
   }
 
   & .page-header__logo-icon,
   & .page-header__search-icon {
-    fill: $white;
+    @media (max-width: $tablet-width) {
+      fill: $white;
+    }
   }
 
   & .page-header__login {
