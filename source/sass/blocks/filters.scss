@@ -166,7 +166,8 @@
 
     @media (max-width: $mobile-width) {
       top: 59px;
-      left: 267px;
+      right: 9px;
+      left: auto;
     }
   }
 }
@@ -317,6 +318,10 @@
   & input:focus + span {
     box-shadow: 0 0 3px 2px $medium-wood;
   }
+
+  & input:active + span {
+    box-shadow: 0 0 5px 2px $black-wood;
+  }
 }
 
 .filters__range {
@@ -403,6 +408,13 @@
     background-color: inherit;
     outline: none;
 
+    appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+    }
+
     @media (max-width: $tablet-width) {
       font-size: 16px;
       line-height: 21px;
@@ -410,6 +422,7 @@
 
     &:hover,
     &:focus {
+      appearance: number-input;
       border-bottom: 1px solid $black-wood;
       margin-bottom: -1px;
     }

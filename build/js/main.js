@@ -143,23 +143,6 @@ POPUPFORM.addEventListener('submit', onFormSubmit);
 
 // Filter
 
-// const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
-
-// const onPopupEscKeydown = (evt) => {
-//   if (isEscEvent(evt)) {
-//     evt.preventDefault();
-//     // closeModal();
-//     closeFilter();
-//   }
-// };
-
-// const hideModal = (evt) => {
-//   if (evt.target === POPUP || evt === FILTER) {
-//     // closeModal();
-//     closeFilter();
-//   }
-// };
-
 const closeFilter = () => {
   FILTER.classList.remove('filters__wrapper--show');
   BODY.classList.remove('page__body--locked');

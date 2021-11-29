@@ -22,7 +22,7 @@
   <header class="page-header">
     <!-- page-header__container--nojs - добавляет background-position когда нет js -->
     <!-- page-header__container--active - добавляется если меню открыто -->
-    <div class="page-header__container container page-header__container--nojs">
+    <div class="page-header__container container page-header__container--nojs page-header__container--active">
       <!-- main-nav__toggle - кнопка открытия меню -->
       <button class="page-header__nav-toggle" type="button" aria-label="Click to open navigation">
         <svg class="page-header__icon" width="25" height="18" viewbox="0 0 25 18">
@@ -58,9 +58,9 @@
           <span class="page-header__cart-count">0</span></a>
       </div>
 
-      <!--main-nav--opened - добавляется если меню открыто -->
+      <!-- main-nav--opened - добавляется если меню открыто -->
       <!-- main-nav--closed - добавляется если меню закрыто -->
-      <nav class="page-header__nav main-nav main-nav--closed">
+      <nav class="page-header__nav main-nav main-nav--opened">
         <ul class="main-nav__list site-list">
           <li>
             <a class="site-list__link" href="#">What’s new</a>

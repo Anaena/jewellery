@@ -12,6 +12,11 @@
   @media (max-width: $tablet-width) {
     z-index: 12;
   }
+
+  .no-js & {
+    position: static;
+    display: flex;
+  }
 }
 
 .popup--show {
@@ -79,6 +84,16 @@
       background-image: url("../img/log-in/sweet-ice-cream-bg-mobile@2x.jpg");
       background-position: top;
       background-size: 100%;
+    }
+  }
+
+  .no-js & {
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    @media (max-width: $tablet-width) {
+      margin-top: 80px;
+      margin-bottom: 80px;
     }
   }
 }
@@ -152,5 +167,9 @@
 
   &:active {
     opacity: 0.5;
+  }
+
+  .no-js & {
+    display: none;
   }
 }
