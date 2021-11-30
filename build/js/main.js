@@ -1,43 +1,42 @@
 'use strict';
 const BODY = document.querySelector('body');
-const PAGEHEADERCONTAINER = document.querySelector('.page-header__container');
-const MENUBUTTONELEMENT = document.querySelector('.page-header__nav-toggle');
-const HEADERNAVIGATION = document.querySelector('.page-header__nav');
-const PAGEMAIN = document.querySelector('.page-main');
-const FILTER = document.querySelector('.filters__wrapper');
-const FILTEROPENBUTTON = document.querySelector('.filters__open-button');
-const FILTERCLOSEBUTTON = document.querySelector('.filters__close-button');
-const POPUP = document.querySelector('.popup');
-const LOGINLINK = document.querySelector('.page-header__login-link');
-const CLOSEPOPUPBUTTON = document.querySelector('.popup__close');
-const POPUPFORM = document.querySelector('.popup__form');
 
-PAGEMAIN.classList.remove('no-js');
-PAGEHEADERCONTAINER.classList.remove('page-header__container--nojs');
-PAGEHEADERCONTAINER.classList.remove('page-header__container--active');
-HEADERNAVIGATION.classList.remove('main-nav--opened');
-HEADERNAVIGATION.classList.remove('main-nav--nojs');
-HEADERNAVIGATION.classList.add('main-nav--closed');
+const pageHeaderContainer = document.querySelector('.page-header__container');
+const menuButtonElement = document.querySelector('.page-header__nav-toggle');
+const headerNavigation = document.querySelector('.page-header__nav');
+const pageMain = document.querySelector('.page-main');
+
+pageMain.classList.remove('no-js');
+pageHeaderContainer.classList.remove('page-header__container--nojs');
+pageHeaderContainer.classList.remove('page-header__container--active');
+headerNavigation.classList.remove('main-nav--opened');
+headerNavigation.classList.remove('main-nav--nojs');
+headerNavigation.classList.add('main-nav--closed');
 
 // Menu
 
 const menuButtonHandler = () => {
-  if (HEADERNAVIGATION.classList.contains('main-nav--closed')) {
-    HEADERNAVIGATION.classList.remove('main-nav--closed');
-    HEADERNAVIGATION.classList.add('main-nav--opened');
-    PAGEHEADERCONTAINER.classList.add('page-header__container--active');
+  if (headerNavigation.classList.contains('main-nav--closed')) {
+    headerNavigation.classList.remove('main-nav--closed');
+    headerNavigation.classList.add('main-nav--opened');
+    pageHeaderContainer.classList.add('page-header__container--active');
     BODY.classList.add('page__body--locked');
   } else {
-    HEADERNAVIGATION.classList.add('main-nav--closed');
-    HEADERNAVIGATION.classList.remove('main-nav--opened');
-    PAGEHEADERCONTAINER.classList.remove('page-header__container--active');
+    headerNavigation.classList.add('main-nav--closed');
+    headerNavigation.classList.remove('main-nav--opened');
+    pageHeaderContainer.classList.remove('page-header__container--active');
     BODY.classList.remove('page__body--locked');
   }
 };
 
-MENUBUTTONELEMENT.addEventListener('click', menuButtonHandler);
+menuButtonElement.addEventListener('click', menuButtonHandler);
 
 // Popup
+
+const popup = document.querySelector('.popup');
+const loginLink = document.querySelector('.page-header__login-link');
+const closePopupButton = document.querySelector('.popup__close');
+const popupForm = document.querySelector('.popup__form');
 
 const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
@@ -45,11 +44,12 @@ const onPopupEscKeydown = (evt) => {
   if (isEscEvent(evt)) {
     evt.preventDefault();
     closeModal();
+    closeFilter();
   }
 };
 
 const hideModal = (evt) => {
-  if (evt.target === POPUP || evt === FILTER) {
+  if (evt.target === popup || evt === filter) {
     closeModal();
     closeFilter();
   }
@@ -73,9 +73,9 @@ try {
 const onFormSubmit = (evt) => {
   if (!loginLogin.value || !loginPassword.value) {
     evt.preventDefault();
-    POPUP.classList.remove('popup-error');
-    POPUP.offsetWidth = POPUP.offsetWidth;
-    POPUP.classList.add('popup-error');
+    popup.classList.remove('popup-error');
+    popup.offsetWidth = popup.offsetWidth;
+    popup.classList.add('popup-error');
   } else {
     if (isStorageSupport) {
       localStorage.setItem('login', loginLogin.value);
@@ -84,19 +84,19 @@ const onFormSubmit = (evt) => {
 };
 
 const closeModal = () => {
-  POPUP.classList.remove('popup--show');
+  popup.classList.remove('popup--show');
   BODY.classList.remove('page__body--locked');
-  POPUPFORM.reset();
+  popupForm.reset();
   itemForm.forEach((item) => {
     item.classList.remove('form__item--error');
   });
-  POPUP.removeEventListener('click', hideModal);
+  popup.removeEventListener('click', hideModal);
   document.removeEventListener('keydown', onPopupEscKeydown);
 };
 
 const openModal = (evt) => {
   evt.preventDefault();
-  POPUP.classList.add('popup--show');
+  popup.classList.add('popup--show');
   BODY.classList.add('page__body--locked');
   document.addEventListener('click', hideModal);
   document.addEventListener('keydown', onPopupEscKeydown);
@@ -109,17 +109,17 @@ const openModal = (evt) => {
 };
 
 const switchPopupElement = (evt) => {
-  const popup = evt.target.closest('.popup');
-  const elements = [...popup.querySelector('form').elements];
+  const modal = evt.target.closest('.popup');
+  const elements = [...modal.querySelector('form').elements];
 
   if (evt.key === 'Tab') {
     if (evt.shiftKey) {
       if (evt.target === elements[0]) {
         evt.preventDefault();
-        CLOSEPOPUPBUTTON.focus();
+        closePopupButton.focus();
       }
     } else {
-      if (evt.target === CLOSEPOPUPBUTTON) {
+      if (evt.target === closePopupButton) {
         evt.preventDefault();
         elements[0].focus();
       }
@@ -127,31 +127,34 @@ const switchPopupElement = (evt) => {
   }
 };
 
-if (POPUP) {
-  POPUP.addEventListener('keydown', switchPopupElement);
+if (popup) {
+  popup.addEventListener('keydown', switchPopupElement);
 }
 
-if (LOGINLINK) {
-  LOGINLINK.addEventListener('click', openModal);
+if (loginLink) {
+  loginLink.addEventListener('click', openModal);
 }
 
-if (CLOSEPOPUPBUTTON) {
-  CLOSEPOPUPBUTTON.addEventListener('click', closeModal);
+if (closePopupButton) {
+  closePopupButton.addEventListener('click', closeModal);
 }
 
-POPUPFORM.addEventListener('submit', onFormSubmit);
+popupForm.addEventListener('submit', onFormSubmit);
 
 // Filter
+const filter = document.querySelector('.filters__wrapper');
+const filtersOpenButton = document.querySelector('.filters__open-button');
+const filtersCloseButton = document.querySelector('.filters__close-button');
 
 const closeFilter = () => {
-  FILTER.classList.remove('filters__wrapper--show');
+  filter.classList.remove('filters__wrapper--show');
   BODY.classList.remove('page__body--locked');
-  FILTER.removeEventListener('click', hideModal);
+  filter.removeEventListener('click', hideModal);
   document.removeEventListener('keydown', onPopupEscKeydown);
 };
 
 const openFilter = () => {
-  FILTER.classList.add('filters__wrapper--show');
+  filter.classList.add('filters__wrapper--show');
   BODY.classList.add('page__body--locked');
   document.addEventListener('click', hideModal);
   document.addEventListener('keydown', onPopupEscKeydown);
@@ -165,10 +168,10 @@ const switchFilterElement = (evt) => {
     if (evt.shiftKey) {
       if (evt.target === elements[0]) {
         evt.preventDefault();
-        FILTERCLOSEBUTTON.focus();
+        filtersOpenButton.focus();
       }
     } else {
-      if (evt.target === FILTERCLOSEBUTTON) {
+      if (evt.target === filtersOpenButton) {
         evt.preventDefault();
         elements[0].focus();
       }
@@ -176,16 +179,16 @@ const switchFilterElement = (evt) => {
   }
 };
 
-if (FILTER) {
-  FILTER.addEventListener('keydown', switchFilterElement);
+if (filter) {
+  filter.addEventListener('keydown', switchFilterElement);
 }
 
-if (FILTEROPENBUTTON) {
-  FILTEROPENBUTTON.addEventListener('click', openFilter);
+if (filtersOpenButton) {
+  filtersOpenButton.addEventListener('click', openFilter);
 }
 
-if (FILTERCLOSEBUTTON) {
-  FILTERCLOSEBUTTON.addEventListener('click', closeFilter);
+if (filtersCloseButton) {
+  filtersCloseButton.addEventListener('click', closeFilter);
 }
 
 // Accordion
@@ -227,8 +230,6 @@ if (accordionFilterTitle) {
 }
 
 // Slider
-
-// const jewellerySlider = document.querySelector('.slider');
 
 const makeSlidesCounter = () => {
   const countCurrent = $('.counter__current');
