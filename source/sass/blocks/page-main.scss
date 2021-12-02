@@ -62,7 +62,9 @@
   }
 
   & .page-main__filters {
-    margin-right: 7px;
+    @media (max-width: $mobile-width) {
+      margin-right: 7px;
+    }
   }
 
   .no-js & {

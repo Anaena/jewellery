@@ -1,7 +1,7 @@
 .card {
   display: grid;
   justify-items: center;
-  row-gap: 20px;
+  row-gap: 19px;
   text-align: center;
 
   @media (max-width: $mobile-width) {
@@ -24,9 +24,6 @@
   & a {
     display: flex;
     flex-direction: column;
-    // display: grid;
-    // text-align: center;
-    // row-gap: 7px;
     color: $black-wood;
     outline: none;
     order: 2;

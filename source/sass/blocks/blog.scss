@@ -262,7 +262,8 @@
 
     &:hover,
     &:focus {
-      opacity: 0.7;
+      color: $medium-wood;
+      border-bottom: 1px solid $black-wood;
     }
 
     &:active {

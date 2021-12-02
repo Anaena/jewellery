@@ -14,9 +14,8 @@
 }
 
 .form__item {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 28px;
 
   @media (max-width: $mobile-width) {
@@ -29,6 +28,7 @@
     line-height: 21px;
     width: 100%;
     min-height: 36px;
+    grid-column: 1/-1;
     padding: 5px 0;
     border: none;
     border-bottom: 1px solid $black-wood;
@@ -81,8 +81,10 @@
   font-size: 12px;
   line-height: 18px;
   color: $zorba;
+  grid-column: 1/-1;
   text-decoration: none;
   outline: none;
+  justify-self: end;
   text-align: end;
 
   @media (max-width: $tablet-width) {

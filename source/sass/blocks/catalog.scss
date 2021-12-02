@@ -2,14 +2,15 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 30px;
-  row-gap: 30px;
-  margin: 0 0 30px;
+  row-gap: 34px;
+  margin: 0 0 34px;
   padding: 0;
   list-style: none;
 
   @media (max-width: $tablet-width) {
     row-gap: 33px;
-    column-gap: 23px;
+    column-gap: 30px;
+    margin: 0 0 30px;
   }
 
   @media (max-width: $mobile-width) {
@@ -34,6 +35,12 @@
 }
 
 .catalog__card {
+  row-gap: 16px;
+
+  @media (max-width: $tablet-width) {
+    row-gap: 15px;
+  }
+
   @media (max-width: $mobile-width) {
     row-gap: 10px;
   }

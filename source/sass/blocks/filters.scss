@@ -230,6 +230,7 @@
 }
 
 .filters__item {
+  position: relative;
   max-width: 250px;
   margin: 0;
   padding: 24px 21px 23px 25px;
@@ -295,6 +296,9 @@
     width: 15px;
     height: 15px;
     border: 1px solid $medium-wood;
+    margin-left: -25px;
+    margin-top: 1px;
+    cursor: pointer;
   }
 
   & label {
@@ -303,6 +307,7 @@
     margin: 0;
     padding-left: 24px;
     color: $black-wood;
+    cursor: pointer;
   }
 
   & label:hover,

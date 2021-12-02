@@ -1,6 +1,10 @@
 .page-footer {
   color: $white;
   background-color: $black;
+
+  &--position {
+    margin-top: auto;
+  }
 }
 
 .page-footer__container {

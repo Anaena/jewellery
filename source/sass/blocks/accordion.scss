@@ -4,6 +4,7 @@
 }
 
 .accordion__item {
+  position: relative;
   min-height: 111px;
   padding: 44px 46px 40px 42px;
 
@@ -58,6 +59,7 @@
 .accordion__fieldset--active {
   .accordion__filter-title {
     margin-bottom: 21px;
+    position: relative;
 
     @media (max-width: $tablet-width) {
       margin-bottom: 23px;
@@ -104,9 +106,20 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 
   @media (max-width: $mobile-width) {
     align-items: flex-start;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 
   & h3 {
@@ -197,6 +210,16 @@
 }
 
 .accordion__filter-title {
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
   & button {
     display: flex;
     justify-content: center;
@@ -248,15 +271,6 @@
   &:active svg {
     opacity: 0.7;
   }
-
-  // & button:focus ~ h3,
-  // & button:hover ~ h3 {
-  //   opacity: 0.7;
-  // }
-
-  // & button:active ~ h3 {
-  //   opacity: 0.5;
-  // }
 }
 
 .accordion__icon--open {
